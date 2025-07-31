@@ -1,0 +1,163 @@
+@extends('layouts.admin.main') {{-- Pastikan ini menunjuk ke layout utama yang benar --}}
+
+@section('title', 'Manajemen Produk - AdminPanel')
+@push('cssOnPage')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+@endpush
+@section('content')
+    {{-- Alpine.js component wrapper --}}
+    <div x-data="{
+        showSuccessModal: {{ session('success') ? 'true' : 'false' }},
+        showDeleteModal: false,
+        showErrorModal: {{ session('error') ? 'true' : 'false' }},
+        deleteFormAction: ''
+    }" x-init="setTimeout(() => showSuccessModal = false, 5000)">
+
+        {{-- Main Content Table --}}
+        <div
+            class="bg-white/70 backdrop-blur-lg rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] overflow-hidden min-h-[500px]">
+            <div class="flex justify-between items-center p-6">
+                <h2 class="text-2xl font-bold text-slate-800">Contact Us</h2>
+              
+            </div>
+            <div class="p-4 flex justify-between items-center">
+                <input type="text" id="customSearch" placeholder="Cari..."
+                    class="border border-slate-300 rounded-lg p-2 text-sm">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left" id="indexTable">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50/50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">No</th>
+                            <th scope="col" class="px-6 py-3">Tanggal</th>
+                            <th scope="col" class="px-6 py-3">Nama</th>
+                            <th scope="col" class="px-6 py-3">No. Handphone</th>
+                            <th scope="col" class="px-6 py-3">Email</th>
+                            <th scope="col" class="px-6 py-3">Pesan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @include('admin.modalNotif')
+
+
+    </div>
+@endsection
+
+@push('jsOnPage')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inisialisasi DataTable
+            var table = $('#indexTable').DataTable({
+                // AKTIFKAN SERVER-SIDE
+                "processing": true, 
+                "serverSide": true, 
+                "ajax": {
+                    "url": "/admin/contact/lists", 
+                    "type": "POST", 
+                    "data": function(d) {
+                        d._token = '{{ csrf_token() }}';
+                    }
+                },
+
+                // MENGHILANGKAN FITUR BAWAAN DATATABLES
+                "dom": 't<"flex justify-between items-center p-4"ip>', // 't' = tabel, 'i' = info, 'p' = pagination
+                "pagingType": "simple_numbers", // Tipe pagination
+                "searching": true, // Tetap aktifkan searching, tapi kita kontrol dari input sendiri
+
+                // DEFINISIKAN KOLOM DARI DATA JSON SERVER
+                "columns": [{
+                        "data": "no",
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "px-6 py-4 text-center"
+                    },
+                    
+                    {
+                        "data": "tanggal",
+                        "className": "px-6 py-4 font-medium text-slate-900"
+                    },
+                    {
+                        "data": "name",
+                        "className": "px-6 py-4 font-medium text-slate-900"
+                    },
+                    {
+                        "data": "phone_number",
+                        "className": "px-6 py-4"
+                    },
+                    {
+                        "data": "email",
+                        "className": "px-6 py-4"
+                    },
+                    {
+                        "data": "message",
+                        "className": "px-6 py-4 text-start min-w-[300px]"
+                    },
+                   
+                ],
+
+                // FUNGSI UNTUK MENAMBAHKAN CLASS TAILWIND SETELAH TABEL DI-RENDER
+                "initComplete": function(settings, json) {
+                    // Menambahkan class ke pagination container
+                    $('.dt-paging').addClass('flex items-center');
+
+                    // Menambahkan class ke setiap tombol pagination
+                    $('.dt-paging-button').addClass(
+                        'px-3 py-1 mx-1 border border-slate-300 rounded-md hover:bg-slate-100');
+
+                    // Menambahkan class ke tombol yang aktif
+                    $('.dt-paging-button.current').addClass('bg-blue-500 text-white').removeClass(
+                        'border-slate-300');
+
+                    // Menambahkan class ke info "Showing x to y of z entries"
+                    $('.dt-info').addClass('text-sm text-slate-600');
+                    lucide.createIcons();
+                },
+                "drawCallback": function(settings, json) {
+                    // Menambahkan class ke pagination container
+                    $('.dt-paging').addClass('flex items-center');
+
+                    // Menambahkan class ke setiap tombol pagination
+                    $('.dt-paging-button').addClass(
+                        'px-3 py-1 mx-1 border border-slate-300 rounded-md hover:bg-slate-100');
+
+                    // Menambahkan class ke tombol yang aktif
+                    $('.dt-paging-button.current').addClass('bg-blue-500 text-white').removeClass(
+                        'border-slate-300');
+
+                    // Menambahkan class ke info "Showing x to y of z entries"
+                    $('.dt-info').addClass('text-sm text-slate-600');
+                    lucide.createIcons();
+                },
+
+                // Mengganti teks default
+                "language": {
+                    "processing": '<div class="text-center">Memuat...</div>',
+                    "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "infoEmpty": "Tidak ada data",
+                    "infoFiltered": "(difilter dari _MAX_ total data)",
+                    "zeroRecords": "Data tidak ditemukan",
+                    "paginate": {
+                        "next": "›",
+                        "previous": "‹"
+                    }
+                }
+            });
+
+            // HUBUNGKAN INPUT PENCARIAN KUSTOM
+            $('#customSearch').on('keyup', function() {
+                table.search(this.value).draw();
+            });
+
+
+        });
+    </script>
+@endpush
