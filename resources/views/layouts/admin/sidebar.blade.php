@@ -4,10 +4,11 @@
     <div class="flex items-center justify-between p-6 border-b border-slate-200/80 h-20">
         <div class="flex items-center space-x-3">
             <i data-lucide="club" class="w-8 h-8 text-yellow-300"></i>
-            <span class="text-sm font-bold text-slate-800 bg-gradient-to-r from-yellow-300 to-orange-500 bg-clip-text text-transparent">Cahaya Optima</span>
+            <span
+                class="text-sm font-bold text-slate-800 bg-gradient-to-r from-yellow-300 to-orange-500 bg-clip-text text-transparent">Cahaya
+                Optima</span>
         </div>
-        <button @click="desktopSidebarOpen = false"
-            class="hidden md:block text-slate-500 hover:text-slate-800">
+        <button @click="desktopSidebarOpen = false" class="hidden md:block text-slate-500 hover:text-slate-800">
             <i data-lucide="panel-left-close" :class="{ 'hidden': desktopSidebarOpen }"></i>
             <i data-lucide="panel-right" :class="{ 'hidden': !desktopSidebarOpen }"></i>
         </button>
@@ -100,16 +101,18 @@
                     :class="{ 'rotate-180': isOpen }"></i>
             </button>
             <div x-show="isOpen" x-transition class="pl-7 space-y-1">
-                <a href="/admin/user-management/role"
-                    class="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg transition-colors text-xs {{ Route::is('admin.user-management.role') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-500 hover:text-slate-800' }}">
-                    <i data-lucide="user-pen" class="w-5 h-5"></i>
-                    <span>Role</span>
-                </a>
-                <a href="/admin/user-management/users"
-                    class="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg transition-colors text-xs {{ Route::is('admin.user-management.users') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-500 hover:text-slate-800' }}">
-                    <i data-lucide="users" class="w-5 h-5"></i>
-                    <span>Users</span>
-                </a>
+                @if (auth()->user()->role->name === 'Super Admin')
+                    <a href="/admin/user-management/role"
+                        class="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg transition-colors text-xs {{ Route::is('admin.user-management.role') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-500 hover:text-slate-800' }}">
+                        <i data-lucide="user-pen" class="w-5 h-5"></i>
+                        <span>Role</span>
+                    </a>
+                    <a href="/admin/user-management/users"
+                        class="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg transition-colors text-xs {{ Route::is('admin.user-management.users') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-500 hover:text-slate-800' }}">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span>Users</span>
+                    </a>
+                @endif
                 <a href="/admin/user-management/users-activity"
                     class="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg transition-colors text-xs {{ Route::is('admin.user-management.users_activity') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-500 hover:text-slate-800' }}">
                     <i data-lucide="user-round-search" class="w-5 h-5"></i>

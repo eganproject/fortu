@@ -20,8 +20,8 @@ class RoleSeeder extends Seeder
         foreach ($roles as $role) {
            $id =  Role::create($role)->id;
            User::create([
-            'name' => 'Ega Nugraha',
-            'email' => 'eganugraha@gmail.com',
+            'name' => 'Fortu Signage',
+            'email' => 'fortu.signage@gmail.com',
             'password' => Hash::make('Password!2'),
             'role_id' => $id,
            ]);
