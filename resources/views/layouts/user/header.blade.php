@@ -3,7 +3,8 @@
     <nav class="container mx-auto px-8 py-4 flex justify-between items-center">
         <div class="flex-shrink-0">
             <a href="/" class="flex items-center">
-                <img src="{{ get_logo_url() }}" alt="Fortu Logo" class="object-cover h-12 transition-transform duration-300 hover:scale-110">
+                <img src="{{ get_logo_url() }}" alt="Fortu Logo"
+                    class="object-cover h-12 transition-transform duration-300 hover:scale-110">
             </a>
         </div>
         <div class="hidden md:flex items-center space-x-12 text-base">
@@ -26,6 +27,10 @@
                 a Partner</a>
             <a href="/career"
                 class="{{ request()->is('career') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Career</a> --}}
+            @auth
+                <a href="/admin"
+                    class="text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300 font-semibold">Administrator</a>
+            @endauth
         </div>
 
         <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
@@ -66,6 +71,9 @@
             a Partner</a>
         <a href="/career"
             class="block py-2 px-4 {{ request()->is('career') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Career</a> --}}
+        @auth
+            <a href="/admin" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-200">Administrator</a>
+        @endauth
     </div>
 </header>
 
