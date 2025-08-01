@@ -86,7 +86,7 @@ class BlogArticleController extends Controller
                 'tanggal' => \Carbon\Carbon::parse($article->tanggal)->format('d M Y, H:i'),
                 'judul' => $article->title,
                 // Pastikan path gambar benar
-                'gambar' => asset('storage/' . $article->image),
+                'gambar' => asset('public/storage/' . $article->image),
                 'artikel' => $article->text,
                 // Ambil nama penulis dari relasi, beri fallback jika tidak ada
                 'penulis' => $article->user->name ?? 'N/A',
