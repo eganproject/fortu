@@ -6,7 +6,7 @@
             <!-- Hero Section -->
             <style>
                 .hero-bg {
-                    background-image: url('{{ $hero ? asset('storage/' . $hero->image_1) : 'https://placehold.co/1200x600/C7C7C7/080808?text=Hero' }}');
+                    background-image: url('{{ $hero ? asset('public/storage/' . $hero->image_1) : 'https://placehold.co/1200x600/C7C7C7/080808?text=Hero' }}');
                     background-size: cover;
                     background-position: center;
                 }
@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
-                        <img src="{{ $hero ? asset('storage/' . $hero->image_2) : 'https://placehold.co/450x300/C7C7C7/080808?text=Grafik+Isometric' }}"
+                        <img src="{{ $hero ? asset('public/storage/' . $hero->image_2) : 'https://placehold.co/450x300/C7C7C7/080808?text=Grafik+Isometric' }}"
                             alt="Isometric Graphic" class="w-full max-w-md opacity-80">
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             {{ $loop->even ? 'ml-auto' : 'mr-auto' }}">
 
                                 {{-- Gambar Latar Belakang --}}
-                                <img src="{{ asset('storage/' . $item->image_1) }}"
+                                <img src="{{ asset('public/storage/' . $item->image_1) }}"
                                     alt="Latar belakang untuk {{ $item->title }}"
                                     class="absolute inset-0 w-full h-full object-cover">
 
@@ -69,7 +69,7 @@
                                 class="hidden md:block absolute inset-y-0 z-20
                             {{-- Posisikan wadah di tepi panel teks (yang dimulai dari 1/3 lebar) --}}
                             {{ $loop->even ? 'left-1/3' : 'right-1/3' }}">
-                                <img src="{{ asset('storage/' . $item->image_2) }}"
+                                <img src="{{ asset('public/storage/' . $item->image_2) }}"
                                     alt="Ilustrasi untuk {{ $item->title }}"
                                     class="max-w-sm lg:max-w-md xl:max-w-lg transform transition-transform duration-500 hover:scale-105
                                 {{-- Geser gambar sebesar setengah lebarnya sendiri untuk menengahkan & menumpuknya di tepi --}}

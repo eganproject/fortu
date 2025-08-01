@@ -58,7 +58,7 @@
         @section('content')
             <!-- Hero Section -->
             <section class="h-[60vh] md:h-[90vh] bg-stone-200">
-                <img src="{{ $hero ? asset('storage/' . $hero->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image' }}"
+                <img src="{{ $hero ? asset('public/storage/' . $hero->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image' }}"
                     alt="Main Hero" class="w-full h-full object-cover">
             </section>
 
@@ -80,7 +80,7 @@
                                     class="bg-gradient-to-r from-stone-50 to-stone-200 rounded-3xl shadow-xl p-5 flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-5 sm:h-[420px]">
 
                                     <div class="w-full {{ $kat->layout == 2 ? 'sm:w-8/12' : 'sm:w-7/12' }}">
-                                        <img src="{{ asset('storage/' . $prod->thumbnail) }}" alt="Fortu Smart Board"
+                                        <img src="{{ asset('public/storage/' . $prod->thumbnail) }}" alt="Fortu Smart Board"
                                             class="w-full h-full object-cover drop-shadow-lg">
                                     </div>
 

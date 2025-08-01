@@ -6,7 +6,7 @@
           <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
           <style>
               .hero-bg {
-                  background-image: url('{{ $hero ? asset('storage/' . $hero?->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero' }}');
+                  background-image: url('{{ $hero ? asset('public/storage/' . $hero?->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero' }}');
                   background-size: cover;
                   background-position: center;
                   position: relative;
@@ -35,7 +35,7 @@
                   </div>
                   <!-- Image Content -->
                   <div class="md:w-1/2 flex justify-center">
-                      <img src="{{ $hero ? asset('storage/' . $hero->image_2) : 'https://placehold.co/1200x600/C7D7D7/080808?text=Isometric' }}" alt="Isometric" class="w-full max-w-md">
+                      <img src="{{ $hero ? asset('public/storage/' . $hero->image_2) : 'https://placehold.co/1200x600/C7D7D7/080808?text=Isometric' }}" alt="Isometric" class="w-full max-w-md">
                   </div>
               </div>
           </section>

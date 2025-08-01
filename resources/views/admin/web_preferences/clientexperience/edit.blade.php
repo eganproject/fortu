@@ -40,8 +40,8 @@
 @section('content')
 
     <div x-data="{
-        logo: '{{ asset('storage/' . $clientExperience->logo) }}',
-        image: '{{ asset('storage/' . $clientExperience->image) }}',
+        logo: '{{ asset('public/storage/' . $clientExperience->logo) }}',
+        image: '{{ asset('public/storage/' . $clientExperience->image) }}',
         showSuccessModal: {{ session('success') ? 'true' : 'false' }},
         showDeleteModal: false,
         showErrorModal: {{ session('error') ? 'true' : 'false' }},

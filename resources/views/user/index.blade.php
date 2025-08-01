@@ -51,7 +51,7 @@
 @section('content')
 
     <section class="h-[60vh] md:h-[90vh] bg-gray-200">
-        <img src="{{ $hero ? asset('storage/' . $hero->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image' }}"
+        <img src="{{ $hero ? asset('public/storage/' . $hero->image_1) : 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image' }}"
             alt="Main Hero" class="w-full h-full object-cover">
     </section>
 
@@ -70,7 +70,7 @@
                 @forelse ($carousel as $item)
                     <div class="carousel-slide {{ $loop->first ? 'active' : '' }}">
                         <div class="relative">
-                            <img src="{{ asset('storage/' . $item->images ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
+                            <img src="{{ asset('public/storage/' . $item->images ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
                                 alt="Fortu Video Wall" class="w-full rounded-lg">
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="md:w-3/2 flex flex-col items-center justify-center md:items-end">
-                <img src="{{ asset('storage/carousel/4.png' ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
+                <img src="{{ asset('public/storage/carousel/4.png' ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
                     alt="Smart Board" class="h-[500px] rounded-lg">
             </div>
         </div>
@@ -130,7 +130,7 @@
                     <div class="bg-gradient-to-t from-stone-300 to-stone-100 p-6 rounded-2xl h-50px shadow-xl">
                         <p class="text-gray-500 text-sm">{{ $item->title }}</p>
                         <p class="text-5xl font-bold text-gray-800 my-2">{{ $item->subtitle }}</p>
-                        <img src="{{ asset('storage/' . $item->images ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
+                        <img src="{{ asset('public/storage/' . $item->images ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
                             alt="Robot icon" class="mx-auto w-16">
                     </div>
                 @empty
@@ -140,7 +140,7 @@
         </div>
     </section>
 
-    <section style="background-image: url('{{ asset('storage/background/bg_1_1.png') }}')"
+    <section style="background-image: url('{{ asset('public/storage/background/bg_1_1.png') }}')"
         class="py-16 lg:py-24 bg-no-repeat bg-cover bg-center px-4">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-8 scroll-animate-icon">
@@ -156,11 +156,11 @@
                     <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden">
 
                         <div class="py-4 flex justify-center">
-                            <img src="{{ asset('storage/' . $item->logo) }}" alt="Logo Klien" class="h-10 w-auto">
+                            <img src="{{ asset('public/storage/' . $item->logo) }}" alt="Logo Klien" class="h-10 w-auto">
                         </div>
 
                         <div class="h-56 w-full">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="{{ $item->title }}"
                                 class="w-full h-full object-cover">
                         </div>
 

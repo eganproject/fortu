@@ -43,7 +43,7 @@
                     <div
                         class="mt-2 w-full max-w-sm h-40 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center bg-slate-50 overflow-hidden">
                         <template x-if="!images">
-                            <img src="{{ asset('storage/' . $sorotan->images) }}" alt="Pratinjau Gambar"
+                            <img src="{{ asset('public/storage/' . $sorotan->images) }}" alt="Pratinjau Gambar"
                                 class="w-full h-full object-cover">
                         </template>
                         <template x-if="images">

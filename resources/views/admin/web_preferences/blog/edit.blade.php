@@ -38,7 +38,7 @@
     {{-- Ubah judul header menjadi 'Ubah' --}}
 
     {{-- Atur pratinjau gambar awal dengan gambar yang sudah ada dari $blog --}}
-    <div x-data="{ image1Preview: '{{ $blog->image ? asset('storage/' . $blog->image) : null }}' }"
+    <div x-data="{ image1Preview: '{{ $blog->image ? asset('public/storage/' . $blog->image) : null }}' }"
         class="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
         <h2 class="text-2xl font-bold text-slate-800">Ubah Post</h2>
         <div class="md:px-8">

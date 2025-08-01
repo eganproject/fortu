@@ -57,7 +57,7 @@
                 <h2 class="text-xl font-bold text-gray-800">#Interaktif display terbaik untuk masa depan.</h2>
             </div>
             <div class="md:w-7/12 relative">
-                <img src="{{ asset('storage/' . $product->thumbnail) }}" alt="Digital Signage Products"
+                <img src="{{ asset('public/storage/' . $product->thumbnail) }}" alt="Digital Signage Products"
                     class="rounded-lg w-full">
 
                 <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
@@ -78,7 +78,7 @@
                 @forelse ($product->scopeXFeatures($product->id) as $item)
                     <div class="flex flex-col items-center">
                         <div class="bg-gray-100 rounded-full p-4 mb-4 inline-block shadow-md">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="" class="w-24 h-24">
+                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="" class="w-24 h-24">
                         </div>
                         <h3 class="font-semibold text-gray-800 italic" style="font-family: cursive;">{{ $item->spesifikasi }}</h3>
                     </div>
@@ -114,7 +114,7 @@
                     <div class="feature-card p-8 flex flex-col md:flex-row items-center gap-8 h-[300px] bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl"
                         style="flex-direction: {{ $loopIndex % 2 == 0 ? 'row-reverse' : 'row' }}">
                         <div class=" md:w-1/2 md:mx-0">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="Feature Image"
+                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="Feature Image"
                                 class="rounded-xl max-h-[300px]">
                         </div>
                         <div class="md:w-1/2">

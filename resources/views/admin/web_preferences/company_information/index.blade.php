@@ -39,8 +39,8 @@
 
 @section('content')
     <div x-data="{
-        company_header: '{{ $comIn ? asset('storage/' . $comIn->company_header) : null }}',
-        company_logo: '{{ $comIn ? asset('storage/' . $comIn->company_logo) : null }}',
+        company_header: '{{ $comIn ? asset('public/storage/' . $comIn->company_header) : null }}',
+        company_logo: '{{ $comIn ? asset('public/storage/' . $comIn->company_logo) : null }}',
         showSuccessModal: {{ session('success') ? 'true' : 'false' }},
         showErrorModal: {{ session('error') ? 'true' : 'false' }},
     }" x-init="setTimeout(() => showSuccessModal = false, 5000)">

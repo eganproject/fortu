@@ -40,7 +40,7 @@
 
         <!-- Featured Image -->
         <div class="mb-8 flex justify-center">
-            <img src="{{ $blog->image ? asset('storage/' . $blog->image) : 'https://placehold.co/800x500/FCA5A5/7F1D1D?text=Event+Image' }}"
+            <img src="{{ $blog->image ? asset('public/storage/' . $blog->image) : 'https://placehold.co/800x500/FCA5A5/7F1D1D?text=Event+Image' }}"
                 alt="Image Event Blog" class="w-full rounded-lg max-h-[600px] object-contain">
         </div>
 
@@ -111,7 +111,7 @@
                 @foreach ($recentPost as $item)
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                         <a href="#" class="block">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="Blog post image"
+                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="Blog post image"
                                 class="w-full h-40 object-cover">
                         </a>
                         <div class="py-4 px-4">

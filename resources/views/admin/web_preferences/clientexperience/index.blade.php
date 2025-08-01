@@ -95,14 +95,14 @@
                     {
                         "data": "logo",
                         "render": function(data) {
-                            return `<img src="/storage/${data}" alt="logo" class="h-10 w-16 object-cover rounded">`;
+                            return `<img src="public/storage/${data}" alt="logo" class="h-10 w-16 object-cover rounded">`;
                         },
                         "className": "px-6 py-4 font-medium text-slate-900"
                     },
                     {
                         "data": "image",
                         "render": function(data) {
-                            return `<img src="/storage/${data}" alt="image" class="h-10 w-16 object-cover rounded">`;
+                            return `<img src="public/storage/${data}" alt="image" class="h-10 w-16 object-cover rounded">`;
                         },
                         "className": "px-6 py-4 font-medium text-slate-900"
                     },

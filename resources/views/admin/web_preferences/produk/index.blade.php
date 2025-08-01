@@ -90,7 +90,7 @@
                         "searchable": false,
                         "render": function(data, type, row) {
                             // Jika ada thumbnail, tampilkan. Jika tidak, tampilkan placeholder.
-                            const imageUrl = data ? `{{ asset('storage/') }}/${data}` :
+                            const imageUrl = data ? `{{ asset('public/storage/') }}/${data}` :
                                 'https://placehold.co/100x100/e2e8f0/64748b?text=No+Image';
                             return `<img src="${imageUrl}" alt="Thumbnail" class="w-16 h-16 object-cover rounded-md shadow-md">`;
                         },

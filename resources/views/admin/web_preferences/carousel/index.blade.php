@@ -40,7 +40,7 @@
                             <tr>
                                 <td class="px-6 py-3">{{ $loop->iteration }}</td>
                                 <td class="px-6 py-3">
-                                    <img src="{{ asset('storage/' . $item->images) }}" alt="{{ $item->id }}"
+                                    <img src="{{ asset('public/storage/' . $item->images) }}" alt="{{ $item->id }}"
                                         class="h-[150px]">
                                 </td>
                                 <td class="px-6 py-3">{{ $item->status }}</td>

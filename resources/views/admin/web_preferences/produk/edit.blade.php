@@ -202,7 +202,7 @@
                     'kategori_spesifikasi_id' => $spec->kategori_spesifikasi_id,
                     'spesifikasi' => $spec->spesifikasi,
                     'deskripsi' => $spec->deskripsi ?? '', // Menambahkan fallback untuk nilai null
-                    'imagePreviewUrl' => $spec->image ? asset('storage/' . $spec->image) : '',
+                    'imagePreviewUrl' => $spec->image ? asset('public/storage/' . $spec->image) : '',
                 ];
             });
         @endphp
@@ -210,7 +210,7 @@
         function productForm() {
             return {
                 initialized: false,
-                thumbnailPreviewUrl: '{{ $produk->thumbnail ? asset('storage/' . $produk->thumbnail) : '' }}',
+                thumbnailPreviewUrl: '{{ $produk->thumbnail ? asset('public/storage/' . $produk->thumbnail) : '' }}',
                 // Menginisialisasi spesifikasi langsung dengan data yang sudah disiapkan.
                 specifications: @json($specsForJs),
 

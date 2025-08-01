@@ -40,8 +40,8 @@
 @section('content')
 
     <div x-data="{
-        image_1: '{{ asset('storage/' . $service->image_1 ) }}',
-        image_2: '{{ asset('storage/' .$service->image_2 )}}',
+        image_1: '{{ asset('public/storage/' . $service->image_1 ) }}',
+        image_2: '{{ asset('public/storage/' .$service->image_2 )}}',
         showSuccessModal: {{ session('success') ? 'true' : 'false' }},
         showDeleteModal: false,
         showErrorModal: {{ session('error') ? 'true' : 'false' }},

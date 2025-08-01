@@ -43,13 +43,13 @@
                                 <td class="px-6 py-4 font-medium text-slate-900">{{ $image->modul }}</td>
                                 <td class="px-6 py-4 text-slate-600">{{ Str::limit($image->text, 50) }}</td>
                                 <td class="px-6 py-4">
-                                    <img src="{{ asset('storage/' . $image->image_1) }}"
+                                    <img src="{{ asset('public/storage/' . $image->image_1) }}"
                                         alt="Image 1 for {{ $image->modul }}"
                                         class="w-24 h-12 object-cover rounded-md border border-slate-200">
                                 </td>
                                 <td class="px-6 py-4">
                                     @if ($image->image_2)
-                                        <img src="{{ asset('storage/' . $image->image_2) }}"
+                                        <img src="{{ asset('public/storage/' . $image->image_2) }}"
                                             alt="Image 2 for {{ $image->modul }}"
                                             class="w-24 h-12 object-cover rounded-md border border-slate-200">
                                     @else

@@ -9,7 +9,7 @@
                 <h1 class="text-2xl md:text-4xl font-bold max-w-2xl mb-6 mx-auto">
                     {{ $hero ? $hero->title : 'Belum ada post' }}</h1>
                 <div class="relative rounded-lg overflow-hidden">
-                    <img src="{{ $blog[0] ? asset('storage/' . $blog[0]->image) : 'https://placehold.co/1200x500/C7C7C7/FFFFFF?text=IMG+Post' }}"
+                    <img src="{{ $blog[0] ? asset('public/storage/' . $blog[0]->image) : 'https://placehold.co/1200x500/C7C7C7/FFFFFF?text=IMG+Post' }}"
                         alt="Featured Blog Post" class="w-full h-auto">
                     <!-- Padding dan posisi disesuaikan untuk mobile dan desktop -->
                     <div class="absolute bottom-0 left-0 w-full p-2 md:p-8 text-left">
@@ -38,7 +38,7 @@
                     @foreach ($blog as $item)
                         <div class="bg-white rounded-lg border border-gray-200 flex flex-col">
                             <a href="/blog/{{ $item->slug }}" class="block">
-                                <img src="{{ $item->image ? asset('storage/' . $item->image) : 'https://placehold.co/400x250/E9D5FF/3B0764?text=Blog+Post' }}"
+                                <img src="{{ $item->image ? asset('public/storage/' . $item->image) : 'https://placehold.co/400x250/E9D5FF/3B0764?text=Blog+Post' }}"
                                     alt="Blog post image" class="w-full h-48 object-cover rounded-t-lg">
                             </a>
                             <div class="p-5 flex flex-col flex-grow">

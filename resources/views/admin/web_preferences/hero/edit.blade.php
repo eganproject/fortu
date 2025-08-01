@@ -41,8 +41,8 @@
     <h2 class="text-2xl font-bold text-slate-800 mb-6">Edit Hero Image: {{ $heroImage->modul }}</h2>
 
     <div x-data="{
-        image1Preview: '{{ asset('storage/' . $heroImage->image_1) }}',
-        image2Preview: '{{ $heroImage->image_2 ? asset('storage/' . $heroImage->image_2) : null }}'
+        image1Preview: '{{ asset('public/storage/' . $heroImage->image_1) }}',
+        image2Preview: '{{ $heroImage->image_2 ? asset('public/storage/' . $heroImage->image_2) : null }}'
     }"
         class="bg-white/70 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
 
