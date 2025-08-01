@@ -25,7 +25,7 @@ Route::view('/smartos', 'user.smartos')->name('smartos');
 Route::view('/bcap', 'user.bcap')->name('bcap');
 Route::view('/career', 'user.career')->name('career');
 
-Route::controller(LandingPageController::class)->group(function () {
+Route::middleware(['track.visitors'])->controller(LandingPageController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/about', 'about')->name('about');
     Route::get('/service', 'service')->name('service');
