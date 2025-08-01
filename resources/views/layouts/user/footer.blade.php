@@ -76,5 +76,5 @@
 </footer>
 
 <a href="https://wa.me/{{ $footer['company']?->whatsapp }}" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <img src="{{ asset('image/wa.png') }}" alt="WhatsApp" class="whatsapp-icon">
+    <img src="{{ asset('public/image/wa.png') }}" alt="WhatsApp" class="whatsapp-icon">
 </a>
