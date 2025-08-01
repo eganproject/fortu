@@ -9,7 +9,7 @@
             <nav class="text-xs text-slate-500 mt-1" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
                     <li class="flex items-center">
-                        <a href="#" class="hover:text-blue-600">Admin Panel</a>
+                        <a href="/" class="hover:text-blue-600">Website</a>
                     </li>
                     {{-- <li class="flex items-center mx-2">
                         <i data-lucide="chevron-right" class="w-3 h-3"></i>
