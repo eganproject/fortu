@@ -8,10 +8,10 @@
                 {{-- Ganti dengan path logo yang benar via asset() helper --}}
                 <img src="{{ $footer['logoUrl'] }}" alt="Logo" class="h-8 w-auto mb-4">
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-purple-600 font-medium">About Us</a></li>
-                    <li><a href="#" class="hover:text-purple-600 font-medium">Service</a></li>
-                    <li><a href="#" class="hover:text-purple-600 font-medium">Product</a></li>
-                    <li><a href="#" class="hover:text-purple-600 font-medium">Contact</a></li>
+                    <li><a href="/about" class="hover:text-purple-600 font-medium">About Us</a></li>
+                    <li><a href="/service" class="hover:text-purple-600 font-medium">Service</a></li>
+                    <li><a href="/product" class="hover:text-purple-600 font-medium">Product</a></li>
+                    <li><a href="/contact" class="hover:text-purple-600 font-medium">Contact</a></li>
                 </ul>
             </div>
 
@@ -75,6 +75,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/{{ $footer['company']?->whatsapp }}" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/{{ $footer['company']?->whatsapp }}" class="whatsapp-float" target="_blank"
+    rel="noopener noreferrer">
     <img src="{{ asset('public/image/wa.png') }}" alt="WhatsApp" class="whatsapp-icon">
 </a>
