@@ -63,7 +63,7 @@
                     <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
                     <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
                 </div>
-                <h2 class="text-2xl font-bold">Interactive Display Canggih Buatan Anak Bangsa</h2>
+                <h2 class="text-2xl font-bold">Interactive Display Canggih</h2>
             </div>
 
             <div id="interactive-carousel" class="carousel-container">
@@ -95,36 +95,92 @@
         </div>
     </section>
 
-    <section class="bg-stone-500 text-white py-16 px-4">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="md:w-1/4 flex items-start gap-4">
-                <div class="bg-white p-2 rounded-md">
-                    <svg class="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold">-</h2>
-                    <p class="text-gray-300">Elevate Your Vision </p>
-                    <p class="mt-4 text-sm max-w-md">
-                        PT. Fortu Digital Teknologi adalah perusahaan yang sudah besertifikasi TKDN >40% untuk
-                        produk-produknya. Kami yakin dengan tingkat komponen dalam negeri yang ada pada produk kami
-                        menjadikan produk kami dapat bersaing dengan produk lokal maupun global.
-                    </p>
+    <section
+        class="min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 px-4 bg-gradient-to-b from-stone-300 to-stone-100">
+        <!-- Card Container -->
+        <div
+            class="max-w-5xl w-full bg-white rounded-3xl shadow-2xl shadow-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+
+            <!-- Kolom Gambar -->
+            <div class="relative h-80 lg:h-full">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop"
+                    alt="Tim profesional berkolaborasi di lingkungan kantor modern"
+                    class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-none">
                 </div>
             </div>
-            <div class="md:w-3/2 flex flex-col items-center justify-center md:items-end">
-                <img src="{{ asset('public/storage/carousel/4.png' ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
-                    alt="Smart Board" class="h-[500px] rounded-lg">
+
+            <!-- Kolom Teks -->
+            <div class="p-8 sm:p-12 flex flex-col justify-center">
+                <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    Solusi Visual Interaktif Anda
+                </h1>
+                <p class="text-slate-600 leading-relaxed mb-10">
+                    FORTU Digital hadir sebagai solusi visual interaktif yang menghubungkan brand dengan audiens melalui
+                    pengalaman digital yang memukau dan memikat. Kami percaya bahwa tampilan yang kuat mampu menyampaikan
+                    pesan lebih tajam daripada kata-kata.
+                </p>
+
+                <!-- Visi & Misi Container -->
+                <div class="space-y-8">
+                    <!-- Visi -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-blue-600 bg-blue-100 p-3 rounded-full">
+                            <!-- Lucide Icon: Target -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-slate-800 mb-1">Visi</h2>
+                            <p class="text-slate-600">
+                                Menjadi pelopor brand teknologi visual terdepan di Indonesia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-blue-600 bg-blue-100 p-3 rounded-full">
+                            <!-- Lucide Icon: ListChecks -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m3 17 2 2 4-4" />
+                                <path d="m3 7 2 2 4-4" />
+                                <path d="M13 6h8" />
+                                <path d="M13 12h8" />
+                                <path d="M13 18h8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-slate-800 mb-1">Misi</h2>
+                            <p class="text-slate-600">
+                                Menjadi solusi bisnis melalui komunikasi visual yang interaktif, elegan, dan berdampak,
+                                dengan layanan purnajual terpercaya di seluruh Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </section>
 
     <section class="py-20 px-4">
         <div class="container mx-auto px-4">
+            <div class="flex items-center mb-8 scroll-animate-icon">
+                <div class="flex items-center mr-3">
+                    <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
+                    <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
+                    <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
+                </div>
+                <h2 class="text-2xl font-bold">Our Journey</h2>
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 text-center">
                 @forelse ($sorotan as $item)
                     <div class="bg-gradient-to-t from-stone-300 to-stone-100 p-6 rounded-2xl h-50px shadow-xl">
@@ -145,7 +201,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-8 scroll-animate-icon">
                 <div class="flex items-center mr-3">
-                   <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
+                    <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
                     <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
                     <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
                 </div>
