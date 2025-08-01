@@ -86,7 +86,7 @@ class LandingPageController extends Controller
         BlogArticle::where('slug', $slug)->increment('views');
         $blog = BlogArticle::where('slug', $slug)->with(['user'])->first();
         $recentPost = BlogArticle::with(['user'])->whereNot('slug', $slug)->latest()->limit(3)->get(); 
-        $comments = Comment::where('blog_id', $blog->id)->get();
+        $comments = Comment::where('blog_id', $blog->id)->latest()->get();
         return view('user.blog.show', compact('blog', 'recentPost', 'comments'));
     }
 

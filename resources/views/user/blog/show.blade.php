@@ -186,7 +186,9 @@
                             <div class="flex justify-between items-center">
                                 <div>
                                     <p class="font-semibold text-gray-900">{{ $item->nama }}</p>
-                                    <p class="text-xs text-gray-500">{{ $item->tanggal }}</p>
+                                    <p class="text-xs text-gray-500">
+                                        {{ \Carbon\Carbon::parse($item->tanggal)->locale('id_ID')->diffForHumans() }}
+                                    </p>
                                 </div>
                                 <button class="text-gray-400 hover:text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
