@@ -32,7 +32,7 @@ if (!function_exists('get_logo_url')) {
             if ($companyInfo && $companyInfo->company_header) {
                 $headerIconUrl = asset('public/storage/' . $companyInfo->company_header);
             } else {
-                $headerIconUrl = asset('image/default-logo.png');
+                $headerIconUrl = asset('public/image/default-logo.png');
             }
         }
 
