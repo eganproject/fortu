@@ -15,7 +15,7 @@ class UserActivityController extends Controller
     public function lists(Request $request)
     {
         // Memulai query dengan eager loading untuk efisiensi
-        $query = UserActivity::with('user')->select("user_activities.*");
+        $query = UserActivity::with('user')->select("user_activities.*")->latest();
 
         // --- PENCARIAN (SEARCHING) ---
         if ($request->filled('search.value')) {
