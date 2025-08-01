@@ -121,11 +121,11 @@
             </div>
         </div>
         {{-- Analytic --}}
-        <a href="#"
+        {{-- <a href="#"
             class="flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors text-sm text-slate-600 hover:bg-slate-200/60">
             <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
             <span>Analytic</span>
-        </a>
+        </a> --}}
         <a href="/admin/contact"
             class="flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors text-sm {{ Route::is('admin.contact') ? 'bg-slate-200/60 text-slate-900 font-semibold' : 'text-slate-600 hover:bg-slate-200/60' }}">
             <i data-lucide="contact-round" class="w-5 h-5"></i>
