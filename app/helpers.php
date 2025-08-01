@@ -12,9 +12,9 @@ if (!function_exists('get_logo_url')) {
             $companyInfo = CompanyInformation::select('company_logo')->first();
 
             if ($companyInfo && $companyInfo->company_logo) {
-                $logoUrl = asset('storage/' . $companyInfo->company_logo);
+                $logoUrl = asset('public/storage/' . $companyInfo->company_logo);
             } else {
-                $logoUrl = asset('storage/company_logothumb/default-logo.png');
+                $logoUrl = asset('public/storage/company_logothumb/default-logo.png');
             }
         }
 
@@ -30,7 +30,7 @@ if (!function_exists('get_logo_url')) {
             $companyInfo = CompanyInformation::select('company_header')->first();
 
             if ($companyInfo && $companyInfo->company_header) {
-                $headerIconUrl = asset('storage/' . $companyInfo->company_header);
+                $headerIconUrl = asset('public/storage/' . $companyInfo->company_header);
             } else {
                 $headerIconUrl = asset('image/default-logo.png');
             }
@@ -63,7 +63,7 @@ if (!function_exists('get_logo_url')) {
             $companyInfo = CompanyInformation::first();
 
             if ($companyInfo && $companyInfo->company_logo) {
-                $logoUrl = asset('storage/' . $companyInfo->company_logo);
+                $logoUrl = asset('public/storage/' . $companyInfo->company_logo);
             } else {
                 $logoUrl = asset('image/default-logo.png');
             }
