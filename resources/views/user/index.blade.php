@@ -196,8 +196,8 @@
         </div>
     </section>
 
-    <section style="background-image: url('{{ asset('public/storage/background/bg_1_1.png') }}')"
-        class="py-16 lg:py-24 bg-no-repeat bg-cover bg-center px-4">
+    <section 
+        class="py-16 lg:py-24 px-4 bg-gradient-to-b from-stone-300 to-stone-100">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-8 scroll-animate-icon">
                 <div class="flex items-center mr-3">
