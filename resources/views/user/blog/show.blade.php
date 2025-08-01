@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="flex justify-between items-center mt-3 text-sm text-gray-500">
-                <span>{{ $blog->views }} views &nbsp;&nbsp; {{ $blog->comments }} comments</span>
+                <span>{{ $blog->views }} views &nbsp;&nbsp; {{ $blog->comments }} komentar</span>
                 <button class="flex items-center text-red-500 hover:text-red-600">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -104,7 +104,7 @@
         <section class="mt-16 pt-8 border-t">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-bold text-gray-800">Recent Posts</h2>
-                <a href="./blog.html" class="text-sm font-semibold text-purple-600 hover:underline">See All</a>
+                <a href="/blog" class="text-sm font-semibold text-purple-600 hover:underline">See All</a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Recent Post Card 1 -->
@@ -152,15 +152,16 @@
 
         <!-- Comments Section -->
         <section class="mt-16 pt-8 border-t mb-16">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">0 Comments</h2>
+            <h2 class="text-xl font-bold text-gray-800 mb-4">{{ count($comments) }} Komentar</h2>
             <div class="mb-6">
                 <textarea class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" rows="3"
-                    placeholder="Write a comment..."></textarea>
+                    placeholder="Write a comment..." id="user_comment"></textarea>
             </div>
             <div class="flex justify-end">
                 <button
-                    class="bg-stone-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-stone-600 focus:outline-none focus:ring-2 focus:ring-stone-500">
-                    Post Comment
+                    class="bg-stone-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-stone-600 focus:outline-none focus:ring-2 focus:ring-stone-500 shadow-lg hover:shadow-xl transition-all duration-300"
+                    id="comment-button">
+                    Kirim Komentar
                 </button>
             </div>
             {{-- <div class="flex justify-start items-center mb-6">
@@ -174,41 +175,147 @@
             <!-- Comments List -->
             <div class="space-y-8">
                 <!-- Comment 1 -->
-                
+
                 <!-- Comment 2 -->
-                {{-- <div class="flex items-start space-x-4">
-                    <div class="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center text-white font-bold">
-                        a</div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <p class="font-semibold text-gray-900">anita rusmala</p>
-                                <p class="text-xs text-gray-500">Jun 20</p>
+                @foreach ($comments as $item)
+                    <div class="flex items-start space-x-4 py-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-{{ ['pink', 'blue', 'green', 'yellow'][rand(0, 3)] }}-500 flex items-center justify-center text-white font-bold">
+                            {{ substr($item->nama, 0, 1) }}</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-semibold text-gray-900">{{ $item->nama }}</p>
+                                    <p class="text-xs text-gray-500">{{ $item->tanggal }}</p>
+                                </div>
+                                <button class="text-gray-400 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                    </svg>
+                                </button>
                             </div>
-                            <button class="text-gray-400 hover:text-gray-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                                </svg>
-                            </button>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-700">
-                            Rekomendasi dari temen buat XAS tinggi x it banget!
-                        </p>
-                        <div class="mt-3 flex items-center space-x-4 text-xs text-gray-500 font-semibold">
-                            <button class="flex items-center hover:text-gray-800"><svg class="w-4 h-4 mr-1"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg> Like</button>
-                            <button class="hover:text-gray-800">Reply</button>
+                            <p class="mt-2 text-sm text-gray-700">
+                                {{ $item->comment }}
+                            </p>
+                            <div class="mt-3 flex items-center space-x-4 text-xs text-gray-500 font-semibold">
+                                <button class="flex items-center hover:text-gray-800"><svg class="w-4 h-4 mr-1"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg>{{ $item->likes }} Suka</button>
+                            </div>
                         </div>
                     </div>
-                </div> --}}
+                @endforeach
             </div>
         </section>
     </div>
+    <div class="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-25 hidden" id="modal-comment">
+        <div class="flex items-center justify-center h-full">
+            <div class="bg-white rounded-lg p-8 w-96 relative">
+                <button class="absolute top-0 right-0 p-2 text-gray-400 hover:text-gray-700" id="close-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Informasi</h2>
+                <form id="comment-form">
+                    @csrf
+                    <input type="hidden" name="blog_id" value="{{ $blog->id }}">
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" name="name" id="name"
+                            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" name="email" id="email"
+                            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+                    </div>
+                    <div class="flex justify-end">
+                        <button
+                            class="bg-stone-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-stone-600 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                            type="submit">
+                            Kirim
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
+
+@push('jsOnPage')
+    <script>
+        const commentButton = document.getElementById('comment-button');
+        const modalComment = document.getElementById('modal-comment');
+        const closeModal = document.getElementById('close-modal');
+
+        commentButton.addEventListener('click', () => {
+            modalComment.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            modalComment.classList.add('hidden');
+        });
+
+        modalComment.addEventListener('click', (e) => {
+            if (e.target === modalComment) {
+                modalComment.classList.add('hidden');
+            }
+        });
+        document.getElementById('comment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            modalComment.classList.add('hidden');
+            const formData = new FormData(e.target);
+            const userComment = document.getElementById('user_comment').value;
+            formData.append('comment', userComment);
+
+            fetch('/blog/comment', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const notificationModal = document.createElement('div');
+                        notificationModal.classList.add('fixed', 'top-1/2', 'left-1/2', 'transform',
+                            '-translate-x-1/2', '-translate-y-1/2', 'max-w-md', 'w-full', 'p-6',
+                            'bg-gradient-to-r', 'from-purple-500', 'to-indigo-500', 'rounded-2xl',
+                            'shadow-2xl', 'z-50', 'text-white');
+                        notificationModal.innerHTML = `
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-semibold text-xl">${data.message}</p>
+                                </div>
+                                <button class="text-white hover:text-gray-200" id="close-notification">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        `;
+                        document.body.appendChild(notificationModal);
+                        const closeNotification = notificationModal.querySelector('#close-notification');
+                        closeNotification.addEventListener('click', () => {
+                            notificationModal.remove();
+                        });
+                        setTimeout(() => {
+                            notificationModal.remove();
+                            window.location.reload();
+                        }, 3000);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+@endpush

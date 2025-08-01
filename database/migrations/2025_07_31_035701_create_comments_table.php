@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('blog_id');
             $table->dateTime('tanggal');
             $table->string('nama');
             $table->string('email');
-            $table->string('no_hp');
+            $table->string('no_hp')->nullable();
             $table->mediumText('comment');
             $table->string('ip')->nullable();
+            $table->integer('likes')->default(0);
             $table->timestamps();
         });
     }

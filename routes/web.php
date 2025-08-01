@@ -36,6 +36,7 @@ Route::controller(LandingPageController::class)->group(function () {
     Route::prefix('blog')->name('blog.')->group(function () {
         Route::get('/', 'blog')->name('blog.index');
         Route::get('/load-more', 'loadMorePosts');
+        Route::post('/comment', 'comment');
         Route::get('/{slug}', 'showBlog')->name('blog.show');
     });
     Route::get('/contact', 'contact')->name('contact');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogArticle;
 use App\Models\CarouselIndex;
 use App\Models\ClientExperience;
+use App\Models\Comment;
 use App\Models\HeroImages;
 use App\Models\AboutUs;
 use App\Models\KategoriProduk;
@@ -84,8 +85,9 @@ class LandingPageController extends Controller
     {
         BlogArticle::where('slug', $slug)->increment('views');
         $blog = BlogArticle::where('slug', $slug)->with(['user'])->first();
-        $recentPost = BlogArticle::with(['user'])->whereNot('slug', $slug)->latest()->limit(3)->get();
-        return view('user.blog.show', compact('blog', 'recentPost'));
+        $recentPost = BlogArticle::with(['user'])->whereNot('slug', $slug)->latest()->limit(3)->get(); 
+        $comments = Comment::where('blog_id', $blog->id)->get();
+        return view('user.blog.show', compact('blog', 'recentPost', 'comments'));
     }
 
     public function contact()
@@ -135,5 +137,42 @@ class LandingPageController extends Controller
     public function showProduct(Request $request, $slug){
         $product = Produk::where('slug', $slug)->firstOrFail();
         return view('user.product.show', compact('product'));
+    }
+
+    public function comment(Request $request){
+       
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'comment' => 'required|string|max:1000',
+            ]);
+            DB::beginTransaction();
+
+            Comment::create([
+                'blog_id' => $request->blog_id,
+                'tanggal' => now()->format('Y-m-d H:i:s'),
+                'nama' => $request->name,
+                'email' => $request->email,
+                'comment' => $request->comment,
+                'ip' => $request->ip(),
+            ]);
+            BlogArticle::where('id', $request->blog_id)->increment('comments');
+            DB::commit();
+
+            return response()->json([
+                'success' => 'success',
+                'message' => 'Terima kasih sudah memberikan komentar !'
+            ]);
+
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'error' => 'Error',
+                'message' => 'Gagal mengirimkan komentar, silahkan coba lagi !'
+            ], 500);
+        }
+    
     }
 }
