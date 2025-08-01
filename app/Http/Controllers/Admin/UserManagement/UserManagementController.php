@@ -71,7 +71,7 @@ class UserManagementController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 // Ambil nama role dari relasi, beri fallback jika tidak ada
-                'role' => $user->role->first()->name ?? 'N/A',
+                'role' => $user->role->name ?? 'N/A',
                 // Tombol aksi (edit, delete, dll)
                 'aksi' => $user->id
             ];
