@@ -113,6 +113,13 @@ class SorotanController extends Controller
     public function destroy($id)
     {
         $sorotan = Sorotan::findOrFail($id);
+        UserActivity::create([
+            'user_id' => auth()->user()->id,
+            'modul' => 'Sorotan',
+            'aksi' => 'Hapus',
+            'deskripsi' => 'Menghapus Gambar Sorotan : ' . $id,
+            'ip_address' => request()->ip()
+        ]);
         $sorotan->delete();
         Storage::disk('public')->delete($sorotan->images);
         return redirect('admin/web-preferences/sorotan')->with('success', 'Berhasil Menghapus Data');
