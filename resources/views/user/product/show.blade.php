@@ -55,7 +55,7 @@
                 <p class="text-gray-600 leading-relaxed mb-4">
                     {{ $product->deskripsi }}
                 </p>
-                <h2 class="text-xl font-bold text-gray-800">#Interaktif display terbaik untuk masa depan.</h2>
+                <h2 class="text-xl font-bold text-gray-800">#Elevate Your Vision.</h2>
             </div>
             <div class="md:w-7/12 relative">
                 <img src="{{ asset('public/storage/' . $product->thumbnail) }}" alt="Digital Signage Products"
