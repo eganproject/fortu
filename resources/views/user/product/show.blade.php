@@ -50,7 +50,8 @@
     <section class="hero-gradient py-16 lg:py-6">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-5/12">
-                <h1 class="text-5xl font-bold italic mb-4" style="font-family: cursive; color: #333;">{{ $product->nama }}</h1>
+                <h1 class="text-5xl font-bold italic mb-4" style="font-family: cursive; color: #333;">{{ $product->nama }}
+                </h1>
                 <p class="text-gray-600 leading-relaxed mb-4">
                     {{ $product->deskripsi }}
                 </p>
@@ -75,14 +76,27 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 text-center">
                 <!-- Feature Item -->
-                @forelse ($product->scopeXFeatures($product->id) as $item)
-                    <div class="flex flex-col items-center">
-                        <div class="bg-gray-100 rounded-full p-4 mb-4 inline-block shadow-md">
-                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="" class="w-24 h-24">
+                @forelse ($product->scopeFeatures($product->id) as $item)
+                    <div @class([
+                        'feature-card flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl',
+                        'md:flex-row-reverse' => $loop->even, // Gunakan 'flex-row-reverse' untuk iterasi genap (2, 4, dst.)
+                    ])>
+                        {{-- Kolom Gambar --}}
+                        <div class="w-full md:w-1/2">
+                            {{-- Tambahkan w-full, h-full, dan object-cover agar gambar responsif --}}
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="Feature Image"
+                                class="w-full h-full max-h-[250px] md:max-h-[300px] object-cover rounded-xl">
                         </div>
-                        <h3 class="font-semibold text-gray-800 italic" style="font-family: cursive;">{{ $item->spesifikasi }}</h3>
+
+                        {{-- Kolom Teks --}}
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">
+                                {{ $item->spesifikasi }}</h3>
+                            <p class="text-gray-700 leading-relaxed">{{ $item->deskripsi }}</p>
+                        </div>
                     </div>
                 @empty
+                    {{-- Tidak ada fitur untuk ditampilkan --}}
                 @endforelse
                 <!-- Feature Item -->
 
@@ -118,7 +132,8 @@
                                 class="rounded-xl max-h-[300px]">
                         </div>
                         <div class="md:w-1/2">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">{{ $item->spesifikasi }}</h3>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">
+                                {{ $item->spesifikasi }}</h3>
                             <p class="text-gray-700 leading-relaxed">{{ $item->deskripsi }}</p>
                         </div>
                     </div>
