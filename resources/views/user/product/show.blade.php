@@ -76,27 +76,15 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 text-center">
                 <!-- Feature Item -->
-                @forelse ($product->scopeFeatures($product->id) as $item)
-                    <div @class([
-                        'feature-card flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl',
-                        'md:flex-row-reverse' => $loop->even, // Gunakan 'flex-row-reverse' untuk iterasi genap (2, 4, dst.)
-                    ])>
-                        {{-- Kolom Gambar --}}
-                        <div class="w-full md:w-1/2">
-                            {{-- Tambahkan w-full, h-full, dan object-cover agar gambar responsif --}}
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="Feature Image"
-                                class="w-full h-full max-h-[250px] md:max-h-[300px] object-cover rounded-xl">
+                @forelse ($product->scopeXFeatures($product->id) as $item)
+                    <div class="flex flex-col items-center">
+                        <div class="bg-gray-100 rounded-full p-4 mb-4 inline-block shadow-md">
+                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="" class="w-24 h-24">
                         </div>
-
-                        {{-- Kolom Teks --}}
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">
-                                {{ $item->spesifikasi }}</h3>
-                            <p class="text-gray-700 leading-relaxed">{{ $item->deskripsi }}</p>
-                        </div>
+                        <h3 class="font-semibold text-gray-800 italic" style="font-family: cursive;">
+                            {{ $item->spesifikasi }}</h3>
                     </div>
                 @empty
-                    {{-- Tidak ada fitur untuk ditampilkan --}}
                 @endforelse
                 <!-- Feature Item -->
 
@@ -118,27 +106,27 @@
 
             <div class="space-y-8 max-w-5xl mx-auto">
                 <!-- Feature 1 -->
-                @php
-                    $loopIndex = 0;
-                @endphp
                 @forelse ($product->scopeFeatures($product->id) as $item)
-                    @php
-                        $loopIndex++;
-                    @endphp
-                    <div class="feature-card p-8 flex flex-col md:flex-row items-center gap-8 h-[300px] bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl"
-                        style="flex-direction: {{ $loopIndex % 2 == 0 ? 'row-reverse' : 'row' }}">
-                        <div class=" md:w-1/2 md:mx-0">
+                    <div @class([
+                        'feature-card flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl',
+                        'md:flex-row-reverse' => $loop->even, // Gunakan 'flex-row-reverse' untuk iterasi genap (2, 4, dst.)
+                    ])>
+                        {{-- Kolom Gambar --}}
+                        <div class="w-full md:w-1/2">
+                            {{-- Tambahkan w-full, h-full, dan object-cover agar gambar responsif --}}
                             <img src="{{ asset('public/storage/' . $item->image) }}" alt="Feature Image"
-                                class="rounded-xl max-h-[300px]">
+                                class="w-full h-full max-h-[250px] md:max-h-[300px] object-cover rounded-xl">
                         </div>
-                        <div class="md:w-1/2">
+
+                        {{-- Kolom Teks --}}
+                        <div class="w-full md:w-1/2">
                             <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">
                                 {{ $item->spesifikasi }}</h3>
                             <p class="text-gray-700 leading-relaxed">{{ $item->deskripsi }}</p>
                         </div>
                     </div>
-
                 @empty
+                    {{-- Tidak ada fitur untuk ditampilkan --}}
                 @endforelse
             </div>
         </div>
