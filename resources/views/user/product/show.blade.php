@@ -139,8 +139,7 @@
                 class="max-w-5xl mx-auto bg-gray-800 text-white rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center">
                 <div>
                     <h2 class="text-3xl font-bold" style="font-family: cursive;">Spesifikasi</h2>
-                    <p class="text-gray-300 mt-1">Silahkan Download Brochure untuk mendapatkan spesifikasi produk Fortu
-                        Smart Teller Machine</p>
+                    <p class="text-gray-300 mt-1">Silahkan Download Brochure untuk mendapatkan spesifikasi produk {{$product->nama}}</p>
                 </div>
                 <div class="mt-6 md:mt-0">
                     <a href="#"
