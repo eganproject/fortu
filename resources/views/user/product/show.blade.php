@@ -81,7 +81,7 @@
                         <div class="bg-gray-100 rounded-full p-4 mb-4 inline-block shadow-md">
                             <img src="{{ asset('public/storage/' . $item->image) }}" alt="" class="w-24 h-24">
                         </div>
-                        <h3 class="font-semibold text-gray-800 italic" style="font-family: cursive;">
+                        <h3 class="font-semibold text-gray-800 italic" style="font-family: inter; color: #333;">
                             {{ $item->spesifikasi }}</h3>
                     </div>
                 @empty
@@ -120,7 +120,7 @@
 
                         {{-- Kolom Teks --}}
                         <div class="w-full md:w-1/2">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: cursive;">
+                            <h3 class="text-xl font-bold mb-2 text-gray-900" style="font-family: inter; color: #333;">
                                 {{ $item->spesifikasi }}</h3>
                             <p class="text-gray-700 leading-relaxed">{{ $item->deskripsi }}</p>
                         </div>
