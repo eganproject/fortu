@@ -50,12 +50,12 @@
     <section class="hero-gradient py-16 lg:py-6">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-5/12">
-                <h1 class="text-5xl font-bold italic mb-4" style="font-family: inter; color: #333;">{{ $product->nama }}
+                <h1 class="text-5xl font-bold mb-4" style="font-family: inter; color: #333;">{{ $product->nama }}
                 </h1>
                 <p class="text-gray-600 leading-relaxed mb-4">
                     {{ $product->deskripsi }}
                 </p>
-                <h2 class="text-xl font-bold text-gray-800">#Elevate Your Vision.</h2>
+                {{-- <h2 class="text-xl font-bold text-gray-800">#Elevate Your Vision.</h2> --}}
             </div>
             <div class="md:w-7/12 relative">
                 <img src="{{ asset('public/storage/' . $product->thumbnail) }}" alt="Digital Signage Products"
