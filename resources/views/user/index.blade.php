@@ -103,7 +103,7 @@
 
             <!-- Kolom Gambar -->
             <div class="relative h-80 lg:h-full">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop"
+                <img src="{{ asset('public/image/in_index_2.jpeg') }}"
                     alt="Tim profesional berkolaborasi di lingkungan kantor modern"
                     class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-none">
@@ -195,47 +195,48 @@
             </div>
         </div>
     </section>
-
-    <section 
-        class="py-16 lg:py-24 px-4 bg-gradient-to-b from-stone-300 to-stone-100">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center mb-8 scroll-animate-icon">
-                <div class="flex items-center mr-3">
-                    <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
-                    <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
-                    <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
-                </div>
-                <h2 class="text-2xl font-bold">Client Experience</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                @foreach ($clientExperience as $item)
-                    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden">
-
-                        <div class="py-4 flex justify-center">
-                            <img src="{{ asset('public/storage/' . $item->logo) }}" alt="Logo Klien" class="h-10 w-auto">
-                        </div>
-
-                        <div class="h-56 w-full">
-                            <img src="{{ asset('public/storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                class="w-full h-full object-cover">
-                        </div>
-
-                        <div class="p-6 text-center">
-                            <p class="font-bold text-xl">{{ $item->title }}</p>
-                            <p class="text-sm text-gray-500 mt-1">{{ $item->description }}</p>
-                        </div>
-
+    @if (count($clientExperience) > 0)
+        <section class="py-16 lg:py-24 px-4 bg-gradient-to-b from-stone-300 to-stone-100">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center mb-8 scroll-animate-icon">
+                    <div class="flex items-center mr-3">
+                        <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
+                        <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
+                        <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
                     </div>
-                @endforeach
-            </div>
-            <div class="text-center mt-12">
+                    <h2 class="text-2xl font-bold">Client Experience</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    @foreach ($clientExperience as $item)
+                        <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+
+                            <div class="py-4 flex justify-center">
+                                <img src="{{ asset('public/storage/' . $item->logo) }}" alt="Logo Klien"
+                                    class="h-10 w-auto">
+                            </div>
+
+                            <div class="h-56 w-full">
+                                <img src="{{ asset('public/storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="p-6 text-center">
+                                <p class="font-bold text-xl">{{ $item->title }}</p>
+                                <p class="text-sm text-gray-500 mt-1">{{ $item->description }}</p>
+                            </div>
+
+                        </div>
+                    @endforeach
+                </div>
+                {{-- <div class="text-center mt-12">
                 <a href="#"
                     class="inline-block bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-colors duration-300">
                     See More
                 </a>
+            </div> --}}
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <section class="py-16 lg:py-24 px-4">
         <div class="container mx-auto px-4">
