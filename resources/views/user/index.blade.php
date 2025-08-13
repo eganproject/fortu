@@ -187,7 +187,7 @@
                         <p class="text-gray-500 text-sm">{{ $item->title }}</p>
                         <p class="text-5xl font-bold text-gray-800 my-2">{{ $item->subtitle }}</p>
                         <img src="{{ asset('public/storage/' . $item->images ?? 'https://placehold.co/1200x600/94a3b8/080808?text=Hero+Image') }}"
-                            alt="Robot icon" class="mx-auto w-16">
+                            alt="Robot icon" class="mx-auto h-32">
                     </div>
                 @empty
                     <p class="text-center text-gray-500">No data available</p>
