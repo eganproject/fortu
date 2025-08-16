@@ -206,7 +206,7 @@
         .connector-path {
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
-            transition: stroke-dashoffset 1.5s cubic-bezier(.6, .1, .4, 1);
+            transition: stroke-dashoffset 2s cubic-bezier(.6, .1, .4, 1);
         }
 
         .journey-container.in .connector-path {
