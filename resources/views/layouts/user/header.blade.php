@@ -1,98 +1,30 @@
-<header id="site-header" class="bg-gray-100 bg-opacity-100 sticky top-0 z-50 shadow-sm px-12 transition-all duration-300">
-    {{-- Jarak samping diubah dari px-4 menjadi px-8 --}}
-    <nav class="container mx-auto px-8 py-4 flex justify-between items-center">
-        <div class="flex-shrink-0">
-            <a href="/" class="flex items-center">
-                <img src="{{ get_logo_url() }}" alt="Fortu Logo"
-                    class="object-cover h-12 transition-transform duration-300 hover:scale-110">
-            </a>
-        </div>
-        <div class="hidden md:flex items-center space-x-12 text-base">
-            <a href="/about"
-                class="{{ request()->is('about') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">About
-                Us</a>
-            <a href="/service"
-                class="{{ request()->is('service') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Service</a>
-            {{-- <a href="/smartos"
-                class="{{ request()->is('smartos') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Smart
-                Office Solution</a> --}}
-            <a href="/product"
-                class="{{ request()->is('product') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Product</a>
-            <a href="/blog"
-                class="{{ request()->is('blog') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Blog</a>
-            <a href="/contact"
-                class="{{ request()->is('contact') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Contact</a>
-            {{-- <a href="/bcap"
-                class="{{ request()->is('bcap') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Become
-                a Partner</a>
-            <a href="/career"
-                class="{{ request()->is('career') ? 'text-gray-400' : 'text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300' }} font-semibold">Career</a> --}}
-            @auth
-                <a href="/admin"
-                    class="text-gray-700 hover:bg-black hover:text-white  rounded-full px-3 py-2 transition-colors duration-300 font-semibold">Administrator</a>
-            @endauth
-        </div>
-
-        <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-menu-icon lucide-menu">
-                <path d="M4 12h16" />
-                <path d="M4 18h16" />
-                <path d="M4 6h16" />
-            </svg>
-        </button>
-
-        <button id="mobile-menu-close-button" class="hidden md:hidden text-gray-700 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden">
-        {{-- Ukuran font mobile juga diubah menjadi text-xs --}}
-        <a href="/about"
-            class="block py-2 px-4  {{ request()->is('about') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">About
-            us</a>
-        <a href="/service"
-            class="block py-2 px-4 {{ request()->is('service') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Service</a>
-        {{-- <a href="/smartos"
-            class="block py-2 px-4 {{ request()->is('smartos') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Smart
-            Office Solution</a> --}}
-        <a href="/product"
-            class="block py-2 px-4 {{ request()->is('product') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Product</a>
-        <a href="/blog"
-            class="block py-2 px-4 {{ request()->is('blog') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Blog</a>
-        <a href="/contact"
-            class="block py-2 px-4 {{ request()->is('contact') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Contact</a>
-        {{-- <a href="/bcap"
-            class="block py-2 px-4 {{ request()->is('bcap') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Become
-            a Partner</a>
-        <a href="/career"
-            class="block py-2 px-4 {{ request()->is('career') ? 'text-sm text-purple-600' : 'text-xs text-gray-700' }} hover:bg-gray-200">Career</a> --}}
-        @auth
-            <a href="/admin" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-200">Administrator</a>
-        @endauth
+<header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="h-9 w-9 rounded-xl metal-dark ring-1 ring-white/70 group-hover:shadow-neo transition"></div>
+        <span class="font-display text-xl tracking-tight">FORTU</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-2 text-sm " id="">
+        <a href="/" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->path() === '/' ? 'active' : '' }}"><span>Beranda</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+        <a href="/about" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('about') ? 'active' : '' }}"><span>Tentang</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+        <a href="/service" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('service') ? 'active' : '' }}"><span>Services</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+        <a href="/product" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('product') ? 'active' : '' }}"><span>Produk</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+        <a href="/blog" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('blog') ? 'active' : '' }}"><span>Blog</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+        <a href="/contact" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('contact') ? 'active' : '' }}"><span>Kontak</span><span class="u absolute left-3 -bottom-0.5"></span></a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="/contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i data-lucide="sparkles"></i> Konsultasi</a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-silver-100" aria-label="Buka menu"><i data-lucide="menu"></i></button>
+      </div>
     </div>
-</header>
-
-@push('jsOnPage')
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-                mobileMenuButton.classList.add('hidden');
-                mobileMenuCloseButton.classList.remove('hidden');
-            });
-            mobileMenuCloseButton.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.classList.remove('hidden');
-                mobileMenuCloseButton.classList.add('hidden');
-            });
-        });
-    </script>
-@endpush
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white/80 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm">
+        <a href="/" class="px-3 py-2 rounded-lg hover:bg-silver-100">Beranda</a>
+        <a href="/about" class="px-3 py-2 rounded-lg hover:bg-silver-100">Tentang</a>
+        <a href="/service" class="px-3 py-2 rounded-lg hover:bg-silver-100">Services</a>
+        <a href="/product" class="px-3 py-2 rounded-lg hover:bg-silver-100">Produk</a>
+        <a href="/blog" class="px-3 py-2 rounded-lg hover:bg-silver-100">Blog</a>
+        <a href="/contact" class="px-3 py-2 rounded-lg hover:bg-silver-100">Kontak</a>
+      </div>
+    </div>
+  </header>
