@@ -159,7 +159,7 @@
             </div>
             <div class="flex justify-end">
                 <button
-                    class="bg-stone-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-stone-600 focus:outline-none focus:ring-2 focus:ring-stone-500 shadow-lg hover:shadow-xl transition-all duration-300"
+                    class="bg-black text-white font-semibold px-4 py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 shadow-lg hover:shadow-xl transition-all duration-300"
                     id="comment-button">
                     Kirim Komentar
                 </button>
@@ -256,6 +256,34 @@
 
 @push('jsOnPage')
     <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+
         const commentButton = document.getElementById('comment-button');
         const modalComment = document.getElementById('modal-comment');
         const closeModal = document.getElementById('close-modal');

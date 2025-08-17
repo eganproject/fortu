@@ -19,10 +19,12 @@
                         <p class="mt-5 text-silver-700 text-lg max-w-2xl">{{ $hero ? $hero->text : '' }}
                         </p>
                         <div class="mt-8 flex flex-wrap gap-3">
-
-                            <a href="/service"
+                            <a href="/product"
+                                class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i
+                                    data-lucide="monitor-smartphone"></i> Lihat Produk</a>
+                            {{-- <a href="/service"
                                 class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-silver-300 hover:bg-white"><i
-                                    data-lucide="wand-2"></i> Layanan End-to-End</a>
+                                    data-lucide="wand-2"></i> Layanan End-to-End</a> --}}
                         </div>
 
                     </div>
@@ -98,7 +100,8 @@
                         <h2 class="text-3xl font-bold">Our Valuable <span class="u-accent">Solution</span></h2>
                         <p class="text-gray-500 mb-12 mt-4">Solusi Bernilai Kami</p>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-5xl mx-auto reveal" style="--reveal-delay: 0.15s;">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-5xl mx-auto reveal"
+                        style="--reveal-delay: 0.15s;">
                         <!-- Icon Box Template -->
                         <div class="metal p-6 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

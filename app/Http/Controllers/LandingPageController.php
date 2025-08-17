@@ -120,7 +120,7 @@ class LandingPageController extends Controller
             DB::commit();
 
             return response()->json([
-                'success' => 'success',
+                'success' => true,
                 'message' => 'Terima kasih sudah menghubungi kami, tunggu pesan balasan dari kami ya !'
             ]);
 
