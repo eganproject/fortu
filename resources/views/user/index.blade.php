@@ -20,10 +20,10 @@
                     perangkat mewah, software intuitif, dan layanan terkelola — untuk hasil yang rapi, cepat, dan berdampak.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="produk.html"
+                    <a href="/product"
                         class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i
                             data-lucide="monitor-smartphone"></i> Lihat Produk</a>
-                    <a href="services.html"
+                    <a href="/service"
                         class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-silver-300 hover:bg-white"><i
                             data-lucide="wand-2"></i> Layanan End-to-End</a>
                 </div>
