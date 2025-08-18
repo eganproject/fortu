@@ -1,4 +1,4 @@
-      @extends('layouts.user.main')
+@extends('layouts.user.main')
 
       @section('title', 'About Us - Fortu Digital Teknologi')
       <!-- Hero Section -->
@@ -49,16 +49,15 @@
 
 
           <section id="tentang" class="relative py-20">
-              <div
-                  class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-silver-100/70 to-transparent">
+              <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-silver-100/70 to-transparent">
               </div>
-              <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10 items-center">
-                  <div class="lg:col-span-2 reveal">
+              <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="reveal">
                       <h2 class="font-display text-3xl sm:text-4xl">Tentang <span
                               class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700 u-accent">FORTU</span>
                       </h2>
-                      <p class="mt-4 text-silver-700">{!! $about?->text !!}</p>
-                      <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+                      <p class="mt-4 text-silver-700 max-w-3xl">{!! $about?->text !!}</p>
+                      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                           <div class="p-4 rounded-2xl border bg-white hover:shadow-neo transition">
                               <div class="flex items-center gap-2 font-medium"><i data-lucide="trophy"></i>Premium Build
                               </div>
@@ -66,38 +65,16 @@
                           </div>
                           <div class="p-4 rounded-2xl border bg-white hover:shadow-neo transition">
                               <div class="flex items-center gap-2 font-medium"><i data-lucide="wand-2"></i>Easy Ops</div>
-                              <p class="mt-2 text-silver-700">CMS intuitif & scheduler.</p>
+                              <p class="mt-2 text-silver-700">Sistem operasi yang mudah.</p>
                           </div>
                           <div class="p-4 rounded-2xl border bg-white hover:shadow-neo transition">
                               <div class="flex items-center gap-2 font-medium"><i data-lucide="layers"></i>Fleksibel</div>
                               <p class="mt-2 text-silver-700">Ukuran & orientasi variatif.</p>
                           </div>
-                          <div class="p-4 rounded-2xl border bg-white hover:shadow-neo transition">
+                          {{-- <div class="p-4 rounded-2xl border bg-white hover:shadow-neo transition">
                               <div class="flex items-center gap-2 font-medium"><i data-lucide="line-chart"></i>Terukur</div>
                               <p class="mt-2 text-silver-700">Analytics & PoP.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="lg:col-span-3 reveal" style="--reveal-delay: 0.15s;">
-                      <div class="metal-dark rounded-3xl border border-white/70 p-6 lg:p-8 sheen">
-                          <dl class="grid sm:grid-cols-2 gap-6">
-                              <div>
-                                  <dt class="text-sm text-silver-700">Klien Aktif</dt>
-                                  <dd class="text-3xl font-display counter" data-target="250">0</dd>
-                              </div>
-                              <div>
-                                  <dt class="text-sm text-silver-700">Perangkat Terpasang</dt>
-                                  <dd class="text-3xl font-display counter" data-target="1200">0</dd>
-                              </div>
-                              <div>
-                                  <dt class="text-sm text-silver-700">SLA Uptime</dt>
-                                  <dd class="text-3xl font-display">99.5%</dd>
-                              </div>
-                              <div>
-                                  <dt class="text-sm text-silver-700">Retensi</dt>
-                                  <dd class="text-3xl font-display">92%</dd>
-                              </div>
-                          </dl>
+                          </div> --}}
                       </div>
                   </div>
               </div>

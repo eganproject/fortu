@@ -3,15 +3,18 @@
 @push('cssOnPage')
 @endpush
 @section('content')
+    @php
+            $footer = getFooterUser();
+        @endphp
     <section id="kontak" class="py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10">
             <div class="lg:col-span-2 reveal">
                 <h2 class="font-display text-3xl sm:text-4xl"><span class="u-accent">Kontak</span></h2>
                 <p class="mt-3 text-silver-700">Butuh demo atau penawaran? Kirim pesan — kami respons cepat.</p>
                 <div class="mt-6 space-y-3 text-silver-800">
-                    <div class="flex items-center gap-3"><i data-lucide="mail"></i> hello@fortu.id</div>
-                    <div class="flex items-center gap-3"><i data-lucide="phone"></i> +62 812‑0000‑0000</div>
-                    <div class="flex items-center gap-3"><i data-lucide="map-pin"></i> Jakarta, Indonesia</div>
+                    <div class="flex items-center gap-3"><i data-lucide="mail"></i>  {{ $footer['company']?->email }}</div>
+                    <div class="flex items-center gap-3"><i data-lucide="phone"></i>    {{ $footer['company']?->contact_number }}</div>
+                    <div class="flex items-center gap-3"><i data-lucide="map-pin"></i>    {{ $footer['company']?->address_1 }}</div>
                 </div>
             </div>
             <div class="lg:col-span-3 reveal">
