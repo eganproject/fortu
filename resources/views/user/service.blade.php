@@ -11,7 +11,7 @@
                     <div class="reveal">
                         <p
                             class="inline-flex items-center gap-2 text-xs tracking-wide uppercase text-silver-700 bg-white/70 rounded-full px-3 py-1 g-border">
-                            <i data-lucide="cpu"></i> Digital Signage OS • Proof-of-Play • Scheduler
+                            <i data-lucide="cpu"></i> FORTU • Elevate Your Vision
                         </p>
                         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mt-4"><span
                                 class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700">{{ $hero ? $hero->title : '' }}</span>

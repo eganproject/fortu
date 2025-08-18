@@ -12,7 +12,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div class="reveal text-center lg:text-left">
                 <p class="inline-flex items-center gap-2 text-[10px] sm:text-xs tracking-wide uppercase text-silver-700 bg-white/70 rounded-full px-3 py-1 g-border">
-                    <i data-lucide="cpu" class="w-3 h-3 sm:w-4 sm:h-4"></i> Digital Signage OS • Proof-of-Play • Scheduler
+                    <i data-lucide="cpu" class="w-3 h-3 sm:w-4 sm:h-4"></i> FORTU • Elevate Your Vision
                 </p>
                 <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.05] mt-4">
                     Komunikasi Visual <span class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700">Kelas Premium</span>
