@@ -16,7 +16,7 @@
                         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mt-4"><span
                                 class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700">{{ $hero ? $hero->title : '' }}</span>
                         </h1>
-                        <p class="mt-5 text-silver-700 text-lg max-w-2xl">{{ $hero ? $hero->text : '' }}
+                        <p class="mt-5 text-silver-700 text-lg max-w-2xl">{!! $hero ? $hero->text : '' !!}
                         </p>
                         <div class="mt-8 flex flex-wrap gap-3">
                             <a href="/product"

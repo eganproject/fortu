@@ -38,7 +38,7 @@
                           </div>
                           <div
                               class="relative h-[450px] rounded-3xl metal-dark border border-white/70 shadow-ring overflow-hidden sheen transform rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105">
-                              <img src=""
+                              <img src="{{ $hero ? asset('public/storage/' . $hero->image_1) : 'https://placehold.co/800x600/e0e0e0/333?text=Fortu+Display' }}"
                                   alt="Tim FORTU di ruang kerja modern" class="w-full h-full object-cover">
                               <div class="absolute inset-0 bg-gradient-to-t from-silver-900/20 to-transparent"></div>
                           </div>

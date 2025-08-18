@@ -64,12 +64,12 @@
 
             @forelse ($kategoriProduk as $kat)
                 <section class="py-12">
-                    <div class="container mx-auto px-4">
+                    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                         <div class="flex items-center mb-8 scroll-animate-icon">
                             <div class="flex items-center mr-3">
-                                <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
-                                <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
-                                <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
+                                <div class="w-7 h-7 rounded-full bg-slate-400 icon-circle icon-circle-1"></div>
+                                <div class="w-7 h-7 rounded-full bg-slate-300 -ml-2 icon-circle icon-circle-2"></div>
+                                <div class="w-7 h-7 rounded-full bg-slate-500 -ml-2 icon-circle icon-circle-3"></div>
                             </div>
                             <h2 class="text-2xl font-bold text-gray-800">{{ $kat->nama_kategori }}</h2>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-{{ $kat->layout }} gap-8">
                             @forelse ($kat->produk as $prod)
                                 <div
-                                    class="metal rounded-3xl shadow-xl p-5 flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-5 sm:h-[420px]">
+                                    class="metal rounded-3xl shadow-xl p-5 flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-5 sm:h-[420px] reveal" style="--reveal-delay: 0.2s">
 
                                     <div class="w-full h-64 sm:h-full {{ $kat->layout == 2 ? 'sm:w-8/12' : 'sm:w-7/12' }}">
                                         <img src="{{ asset('public/storage/' . $prod->thumbnail) }}" alt="Fortu Smart Board"
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="pt-3">
                                             <a href="/product/{{ $prod->slug }}"
-                                                class="bg-transparent text-black text-sm font-semibold px-4 py-2 rounded-lg border border-black hover:bg-black hover:text-white transition-all duration-200 shadow-sm">
+                                                class="bg-transparent text-black text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-black hover:bg-black hover:text-white transition-all duration-200 shadow-sm">
                                                 Selengkapnya >
                                             </a>
                                         </div>
@@ -153,6 +153,38 @@
 
         @push('jsOnPage')
             <script>
+
+                 lucide.createIcons();
+
+                // Mobile menu toggle
+                const menuBtn = document.getElementById('menuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                menuBtn?.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+                    lucide.createIcons();
+                });
+
+                // Reveal on scroll
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+
+                // Year
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+
                 const animatedElements = document.querySelectorAll('.scroll-animate-icon');
 
                 if (animatedElements.length > 0) {

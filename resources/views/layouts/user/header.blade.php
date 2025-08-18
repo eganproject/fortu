@@ -13,7 +13,7 @@
         <a href="/contact" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->is('contact') ? 'active' : '' }}"><span>Kontak</span><span class="u absolute left-3 -bottom-0.5"></span></a>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="/contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i data-lucide="sparkles"></i> Konsultasi</a>
+        <a href="https://wa.wizard.id/fd9164" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i data-lucide="sparkles"></i> Konsultasi</a>
         <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-silver-100" aria-label="Buka menu"><i data-lucide="menu"></i></button>
       </div>
     </div>

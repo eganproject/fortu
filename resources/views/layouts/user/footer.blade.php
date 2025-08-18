@@ -8,7 +8,7 @@
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="{{ $footer['logoUrl'] }}" alt="Logo" class="h-8 w-auto">
-                        <span class="font-display text-lg">{{ $footer['company']?->company_name }}</span>
+                        {{-- <span class="font-display text-lg">{{ $footer['company']?->company_name }}</span> --}}
                     </div>
                     
                     <!-- Enhanced Contact Information Section -->

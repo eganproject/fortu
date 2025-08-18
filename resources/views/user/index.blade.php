@@ -29,8 +29,8 @@
                 </div>
                 <div class="mt-10 flex items-center gap-6 text-sm text-silver-700">
                     <div class="flex items-center gap-2"><i data-lucide="shield-check"></i> Garansi Resmi</div>
-                    <div class="flex items-center gap-2"><i data-lucide="rocket"></i> Deploy Cepat</div>
-                    <div class="flex items-center gap-2"><i data-lucide="line-chart"></i> Analytics</div>
+                    <div class="flex items-center gap-2"><i data-lucide="rocket"></i> Installasi Cepat</div>
+                    {{-- <div class="flex items-center gap-2"><i data-lucide="line-chart"></i> Analytics</div> --}}
                 </div>
             </div>
             <div class="reveal lg:justify-self-end" style="--reveal-delay: 0.15s;">
@@ -79,7 +79,7 @@
     <section id="journey" class="py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="reveal text-center max-w-3xl mx-auto">
-                <h2 class="font-display text-3xl sm:text-4xl">Journey <span class="u-accent">Kolaborasi</span></h2>
+                <h2 class="font-display text-3xl sm:text-4xl">Tahap <span class="u-accent">Pembelian</span></h2>
                 <p class="mt-4 text-silver-700">Dari ide hingga implementasi, kami memastikan setiap langkah berjalan mulus,
                     transparan, dan sesuai jadwal.</p>
             </div>
@@ -104,9 +104,8 @@
                                 class="absolute -top-5 -left-5 h-14 w-14 rounded-xl metal flex items-center justify-center text-silver-800">
                                 <i data-lucide="search"></i></div>
                             <p class="absolute top-4 right-5 font-display text-5xl text-silver-200/90">01</p>
-                            <h3 class="font-medium text-lg mt-10">Konsultasi & Strategi</h3>
-                            <p class="text-sm text-silver-700 mt-2">Memahami visi, audit lokasi, dan merancang strategi
-                                efektif.</p>
+                            <h3 class="font-medium text-lg mt-10">Konsultasi</h3>
+                            <p class="text-sm text-silver-700 mt-2">Memahami kebutuhan advertising.</p>
                         </div>
                     </div>
                     <div></div>
@@ -118,8 +117,8 @@
                                 class="absolute -top-5 -left-5 h-14 w-14 rounded-xl metal flex items-center justify-center text-silver-800">
                                 <i data-lucide="palette"></i></div>
                             <p class="absolute top-4 right-5 font-display text-5xl text-silver-200/90">02</p>
-                            <h3 class="font-medium text-lg mt-10">Desain & Prototyping</h3>
-                            <p class="text-sm text-silver-700 mt-2">Membuat mockup visual dan prototipe fungsional.</p>
+                            <h3 class="font-medium text-lg mt-10">Penyesuaian produk</h3>
+                            <p class="text-sm text-silver-700 mt-2">Menganalisis kecocokan produk dengan kebutuhan advertising.</p>
                         </div>
                     </div>
                     <div class="reveal relative md:ml-auto md:max-w-sm" style="--reveal-delay: 0.3s;">
@@ -129,9 +128,8 @@
                                 class="absolute -top-5 -left-5 h-14 w-14 rounded-xl metal flex items-center justify-center text-silver-800">
                                 <i data-lucide="hard-hat"></i></div>
                             <p class="absolute top-4 right-5 font-display text-5xl text-silver-200/90">03</p>
-                            <h3 class="font-medium text-lg mt-10">Produksi & Instalasi</h3>
-                            <p class="text-sm text-silver-700 mt-2">Produksi kualitas tinggi dan instalasi oleh tim
-                                profesional.</p>
+                            <h3 class="font-medium text-lg mt-10">Instalasi</h3>
+                            <p class="text-sm text-silver-700 mt-2">instalasi oleh tim profesional.</p>
                         </div>
                     </div>
                     <div></div>
@@ -143,8 +141,8 @@
                                 class="absolute -top-5 -left-5 h-14 w-14 rounded-xl metal flex items-center justify-center text-silver-800">
                                 <i data-lucide="lifeline"></i></div>
                             <p class="absolute top-4 right-5 font-display text-5xl text-silver-200/90">04</p>
-                            <h3 class="font-medium text-lg mt-10">Dukungan & Analisis</h3>
-                            <p class="text-sm text-silver-700 mt-2">Dukungan teknis, monitoring, dan laporan analitik.</p>
+                            <h3 class="font-medium text-lg mt-10">Dukungan & Supporting </h3>
+                            <p class="text-sm text-silver-700 mt-2">Dukungan teknis dan monitoring.</p>
                         </div>
                     </div>
                 </div>

@@ -35,9 +35,7 @@
     <!-- Hero Section - Digital Signage -->
     @push('cssOnPage')
         <style>
-            .hero-gradient {
-                background: linear-gradient(to right, #afafaf, #f3f3f3);
-            }
+          
 
             .feature-card {
                 background-color: #ffffff;
@@ -47,7 +45,7 @@
             }
         </style>
     @endpush
-    <section class="hero-gradient py-16 lg:py-6">
+    <section class="metal py-16 lg:py-6">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-5/12">
                 <h1 class="text-5xl font-bold mb-4" style="font-family: inter; color: #333;">{{ $product->nama }}
@@ -73,12 +71,12 @@
 
     <!-- 3D Icons Feature Section -->
     <section class="py-20">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 text-center">
                 <!-- Feature Item -->
                 @forelse ($product->scopeXFeatures($product->id) as $item)
                     <div class="flex flex-col items-center">
-                        <div class="bg-gray-100 rounded-full p-4 mb-4 inline-block shadow-md">
+                        <div class="metal rounded-full p-4 mb-4 inline-block shadow-md">
                             <img src="{{ asset('public/storage/' . $item->image) }}" alt="" class="w-24 h-24">
                         </div>
                         <h3 class="font-semibold text-gray-800 italic" style="font-family: inter; color: #333;">
@@ -94,12 +92,12 @@
 
     <!-- Detailed Features Section -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-animate-icon">
                 <div class="flex items-center justify-center mb-2">
-                    <div class="w-7 h-7 rounded-full bg-gray-400 icon-circle icon-circle-1"></div>
-                    <div class="w-7 h-7 rounded-full bg-gray-500 -ml-2 icon-circle icon-circle-2"></div>
-                    <div class="w-7 h-7 rounded-full bg-gray-600 -ml-2 icon-circle icon-circle-3"></div>
+                    <div class="w-7 h-7 rounded-full bg-slate-400 icon-circle icon-circle-1"></div>
+                    <div class="w-7 h-7 rounded-full bg-slate-300 -ml-2 icon-circle icon-circle-2"></div>
+                    <div class="w-7 h-7 rounded-full bg-slate-500 -ml-2 icon-circle icon-circle-3"></div>
                 </div>
                 <h2 class="text-3xl font-bold">Fitur</h2>
             </div>
@@ -108,7 +106,7 @@
                 <!-- Feature 1 -->
                 @forelse ($product->scopeFeatures($product->id) as $item)
                     <div @class([
-                        'feature-card flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 p-6 rounded-xl',
+                        'feature-card flex flex-col md:flex-row items-center gap-8 metal p-6 rounded-xl',
                         'md:flex-row-reverse' => $loop->even, // Gunakan 'flex-row-reverse' untuk iterasi genap (2, 4, dst.)
                     ])>
                         {{-- Kolom Gambar --}}
@@ -134,16 +132,17 @@
 
     <!-- Specification Download Section -->
     <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
                 class="max-w-5xl mx-auto bg-gray-800 text-white rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center">
                 <div>
                     <h2 class="text-3xl font-bold" style="font-family: cursive;">Spesifikasi</h2>
-                    <p class="text-gray-300 mt-1">Silahkan Download Brochure untuk mendapatkan spesifikasi produk {{$product->nama}}</p>
+                    <p class="text-gray-300 mt-1">Silahkan Download Brochure untuk mendapatkan spesifikasi produk
+                        {{ $product->nama }}</p>
                 </div>
                 <div class="mt-6 md:mt-0">
-                    <a href="#"
-                        class="inline-flex items-center justify-center px-6 py-3 border border-green-400 text-base font-medium rounded-full text-green-400 hover:bg-green-400 hover:text-gray-900 transition-colors">
+                    <a href="{{ asset('public/katalog/digital_signage_fortu.pdf') }}" target="_blank"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-green-400 text-base font-medium rounded-full text-green-400 hover:bg-green-400 hover:text-gray-900 transition-colors" download>
                         Download
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -161,6 +160,36 @@
 
 @push('jsOnPage')
     <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         const animatedElements = document.querySelectorAll('.scroll-animate-icon');
 
         if (animatedElements.length > 0) {
