@@ -54,7 +54,7 @@
                     id="article-form">
                     @csrf
                     <div>
-                        <label for="company_header" class="block mb-2 text-sm font-medium text-slate-700">Logo</label>
+                        <label for="company_header" class="block mb-2 text-sm font-medium text-slate-700">Thumbnail</label>
                         <div
                             class="mt-2 w-full max-w-sm h-40 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center bg-slate-50 overflow-hidden">
                             <template x-if="!company_header">
@@ -70,7 +70,7 @@
                         <input type="file" id="company_header" name="company_header"
                             class="mt-4 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
                             @change="company_header = URL.createObjectURL($event.target.files[0])">
-                        <p class="mt-1 text-xs text-slate-500">PNG, JPG, WEBP, SVG (MAX. 2MB). Rekomendasi rasio 16:9.
+                        <p class="mt-1 text-xs text-slate-500">PNG, JPG, WEBP, SVG (MAX. 2MB).
                         </p>
                         @error('company_header')
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -94,7 +94,7 @@
                             <input type="file" id="company_logo" name="company_logo"
                                 class="mt-4 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
                                 @change="company_logo = URL.createObjectURL($event.target.files[0])">
-                            <p class="mt-1 text-xs text-slate-500">PNG, JPG, WEBP, SVG (MAX. 2MB). Rekomendasi rasio 16:9.
+                            <p class="mt-1 text-xs text-slate-500">PNG, JPG, WEBP, SVG (MAX. 2MB). 
                             </p>
                             @error('company_logo')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -136,12 +136,11 @@
                         </div>
                     </div>
                     <div>
-                        <label for="youtube" class="block mb-2 text-sm font-medium text-slate-700">YouTube Link on Index
-                            Page</label>
+                        <label for="youtube" class="block mb-2 text-sm font-medium text-slate-700">YouTube ID Video untuk halaman Index</label>
                         <input
                             class="bg-white border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             type="text" name="youtube_link_index" id="youtube_link_index"
-                            placeholder="Masukkan Link Youtube"
+                            placeholder="Masukkan ID Video Youtube"
                             value="{{ old('youtube_link_index', $comIn?->youtube_link_index) }}" />
                         @error('youtube_link_index')
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -189,10 +188,10 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label for="youtube" class="block mb-2 text-sm font-medium text-slate-700">YouTube</label>
+                            <label for="youtube" class="block mb-2 text-sm font-medium text-slate-700">YouTube Akun</label>
                             <input
                                 class="bg-white border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                type="text" name="youtube" id="youtube" placeholder="Masukkan YouTube"
+                                type="text" name="youtube" id="youtube" placeholder="Masukkan Link Akun YouTube"
                                 value="{{ old('youtube', $comIn?->youtube) }}" />
                             @error('youtube')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
