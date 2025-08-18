@@ -91,7 +91,7 @@
                     },
                     {
                         "data": "description",
-                        "className": "px-6 py-4 font-medium text-slate-900"
+                        "className": "px-6 py-4 font-medium text-slate-900 max-w-[60ch]"
                     },
                     {
                         "data": "image_1",
