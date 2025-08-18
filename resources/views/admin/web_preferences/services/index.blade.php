@@ -96,14 +96,14 @@
                     {
                         "data": "image_1",
                         "render": function(data, type, row) {
-                            return data ? `<img src="public/storage/${data}" class="w-20 h-20 object-cover rounded-lg">` : '';
+                            return data ? `<img src="{{ asset('public/storage') }}/${data}" class="w-20 h-20 object-cover rounded-lg">` : '';
                         },
                         "className": "px-6 py-4 font-medium text-slate-900"
                     },
                     {
                         "data": "image_2",
                         "render": function(data, type, row) {
-                            return data ? `<img src="public/storage/${data}" class="w-20 h-20 object-cover rounded-lg">` : '';
+                            return data ? `<img src="{{ asset('public/storage') }}/${data}" class="w-20 h-20 object-cover rounded-lg">` : '';
                         },
                         "className": "px-6 py-4 font-medium text-slate-900"
                     },
