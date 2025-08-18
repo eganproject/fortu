@@ -38,7 +38,7 @@
                             <label class="block text-sm text-silver-700">No Telpon</label>
                             <input type="text" name="phone_number" id="phone_number"
                                 class="mt-1 w-full rounded-xl border-silver-300 focus:border-silver-600 focus:ring-silver-600"
-                                placeholder="080000000" />
+                                placeholder="08xxxxxxxx" />
                         </div>
 
                         <div class="md:col-span-2 mt-2">
