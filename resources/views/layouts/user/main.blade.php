@@ -244,6 +244,8 @@
             width: 60%;
         }
     </style>
+@stack('cssOnPage')
+    
 </head>
 
 <body class="bg-silver-50 text-silver-900 font-body selection:bg-accent-500/30">

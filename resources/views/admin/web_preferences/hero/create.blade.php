@@ -211,7 +211,7 @@
         descContainer.classList.add('hidden');
         image2Container.classList.add('hidden');
         const modul = document.querySelector('#modul');
-        if (modul.value === 'about' || modul.value === 'service' || modul.value === 'blog') {
+        if (modul.value === 'about' || modul.value === 'service' || modul.value === 'blog' || modul.value === 'product') {
             image2Container.classList.remove('hidden');
             descContainer.classList.remove('hidden');
             titleContainer.classList.remove('hidden');
@@ -224,7 +224,7 @@
 
 
         modul.addEventListener('change', function() {
-            if (modul.value === 'about' || modul.value === 'service' || modul.value === 'blog') {
+            if (modul.value === 'about' || modul.value === 'service' || modul.value === 'blog' || modul.value === 'product') {
                 image2Container.classList.remove('hidden');
                 descContainer.classList.remove('hidden');
                 titleContainer.classList.remove('hidden');
