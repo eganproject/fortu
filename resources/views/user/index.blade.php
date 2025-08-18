@@ -6,55 +6,56 @@
 
 {{-- Mendefinisikan konten untuk bagian 'content' di layout utama --}}
 @section('content')
+    <!-- Modify Hero Section -->
     <section id="beranda" class="relative">
         <div class="absolute inset-0 metal noise"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
-            <div class="reveal">
-                <p
-                    class="inline-flex items-center gap-2 text-xs tracking-wide uppercase text-silver-700 bg-white/70 rounded-full px-3 py-1 g-border">
-                    <i data-lucide="cpu"></i> Digital Signage OS • Proof-of-Play • Scheduler</p>
-                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mt-4">Komunikasi Visual <span
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700">Kelas
-                        Premium</span></h1>
-                <p class="mt-5 text-silver-700 text-lg max-w-2xl">FORTU merancang ekosistem digital signage yang memadukan
-                    perangkat mewah, software intuitif, dan layanan terkelola — untuk hasil yang rapi, cepat, dan berdampak.
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+            <div class="reveal text-center lg:text-left">
+                <p class="inline-flex items-center gap-2 text-[10px] sm:text-xs tracking-wide uppercase text-silver-700 bg-white/70 rounded-full px-3 py-1 g-border">
+                    <i data-lucide="cpu" class="w-3 h-3 sm:w-4 sm:h-4"></i> Digital Signage OS • Proof-of-Play • Scheduler
                 </p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="/product"
-                        class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-silver-900 text-white hover:shadow-neo"><i
-                            data-lucide="monitor-smartphone"></i> Lihat Produk</a>
-                    <a href="/service"
-                        class="magnet inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-silver-300 hover:bg-white"><i
-                            data-lucide="wand-2"></i> Layanan End-to-End</a>
+                <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.05] mt-4">
+                    Komunikasi Visual <span class="bg-clip-text text-transparent bg-gradient-to-r from-silver-900 to-silver-700">Kelas Premium</span>
+                </h1>
+                <p class="mt-4 sm:mt-5 text-silver-700 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    FORTU merancang ekosistem digital signage yang memadukan perangkat mewah, software intuitif, dan layanan terkelola — untuk hasil yang rapi, cepat, dan berdampak.
+                </p>
+                <div class="mt-6 sm:mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
+                    <a href="/product" class="magnet w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-silver-900 text-white hover:shadow-neo">
+                        <i data-lucide="monitor-smartphone"></i> Lihat Produk
+                    </a>
+                    <a href="/service" class="magnet w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-silver-300 hover:bg-white">
+                        <i data-lucide="wand-2"></i> Layanan End-to-End
+                    </a>
                 </div>
-                <div class="mt-10 flex items-center gap-6 text-sm text-silver-700">
+                <div class="mt-8 sm:mt-10 flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-silver-700">
                     <div class="flex items-center gap-2"><i data-lucide="shield-check"></i> Garansi Resmi</div>
                     <div class="flex items-center gap-2"><i data-lucide="rocket"></i> Installasi Cepat</div>
-                    {{-- <div class="flex items-center gap-2"><i data-lucide="line-chart"></i> Analytics</div> --}}
                 </div>
             </div>
-            <div class="reveal lg:justify-self-end" style="--reveal-delay: 0.15s;">
-                <div class="relative w-full max-w-xl mx-auto group">
-                    <div
-                        class="absolute -inset-6 bg-gradient-to-tr from-accent-600/30 via-white/30 to-accent-400/30 blur-2xl rounded-[2rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-0">
+            
+            <!-- Hero Image -->
+            <div class="reveal lg:justify-self-end mt-8 lg:mt-0" style="--reveal-delay: 0.15s;">
+                <div class="relative w-full max-w-sm sm:max-w-xl mx-auto group">
+                    <div class="absolute -inset-6 bg-gradient-to-tr from-accent-600/30 via-white/30 to-accent-400/30 blur-2xl rounded-[2rem] transform rotate-3 transition-transform duration-500 group-hover:rotate-0">
                     </div>
-                    <div
-                        class="relative h-[460px] rounded-3xl metal-dark border border-white/70 shadow-ring overflow-hidden sheen transform rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105">
+                    <div class="relative h-[300px] sm:h-[460px] rounded-3xl metal-dark border border-white/70 shadow-ring overflow-hidden sheen transform rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105">
                         <img src="{{ $hero ? asset('public/storage/' . $hero->image_1) : 'https://placehold.co/800x600/e0e0e0/333?text=Fortu+Display' }}"
-                            alt="Digital signage FORTU — Totem 55”" class="w-full h-full object-cover">
+                            alt="Digital signage FORTU — Totem 55" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-20">
+    <!-- Modify Gallery Section -->
+    <section id="gallery" class="py-12 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="reveal text-center max-w-3xl mx-auto">
-                <h2 class="font-display text-3xl sm:text-4xl">Galeri <span class="u-accent">Implementasi</span></h2>
-                <p class="mt-4 text-silver-700">Lihat bagaimana solusi kami mentransformasi berbagai ruang menjadi media
-                    komunikasi yang dinamis dan modern.</p>
+            <div class="reveal text-center max-w-3xl mx-auto px-4 sm:px-0">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl">Galeri <span class="u-accent">Implementasi</span></h2>
+                <p class="mt-3 sm:mt-4 text-sm sm:text-base text-silver-700">
+                    Lihat bagaimana solusi kami mentransformasi berbagai ruang menjadi media komunikasi yang dinamis dan modern.
+                </p>
             </div>
         </div>
         <div class="reveal mt-12 relative max-w-5xl mx-auto">
@@ -75,15 +76,16 @@
         </div>
     </section>
 
-    <!-- JOURNEY SECTION -->
-    <section id="journey" class="py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
+    <!-- Modify Journey Section -->
+    <section id="journey" class="py-12 sm:py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="reveal text-center max-w-3xl mx-auto">
-                <h2 class="font-display text-3xl sm:text-4xl">Tahap <span class="u-accent">Pembelian</span></h2>
-                <p class="mt-4 text-silver-700">Dari ide hingga implementasi, kami memastikan setiap langkah berjalan mulus,
-                    transparan, dan sesuai jadwal.</p>
+            <div class="reveal text-center max-w-3xl mx-auto px-4 sm:px-0">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl">Tahap <span class="u-accent">Pembelian</span></h2>
+                <p class="mt-3 sm:mt-4 text-sm sm:text-base text-silver-700">
+                    Dari ide hingga implementasi, kami memastikan setiap langkah berjalan mulus, transparan, dan sesuai jadwal.
+                </p>
             </div>
-            <div class="journey-container relative mt-20 max-w-5xl mx-auto">
+            <div class="journey-container relative mt-12 sm:mt-20 max-w-5xl mx-auto">
                 <!-- SVG Connectors for Desktop -->
                 <svg aria-hidden="true" class="absolute inset-0 w-full h-full hidden md:block" width="944" height="544"
                     viewBox="0 0 944 544" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,14 +152,15 @@
         </div>
     </section>
 
-    <!-- INTRO VIDEO -->
-    <section id="intro" class="py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10 items-center">
-            <div class="lg:col-span-2">
-                <h2 class="font-display text-3xl sm:text-4xl">Video <span class="u-accent">Introduction</span></h2>
-                <p class="mt-4 text-silver-700">Gambaran cepat ekosistem FORTU: perangkat, software, dan layanan—ringkas &
-                    berdampak.</p>
-                <div class="mt-6 flex items-center gap-4 text-sm text-silver-700">
+    <!-- Modify Video Section -->
+    <section id="intro" class="py-12 sm:py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-6 sm:gap-10 items-center">
+            <div class="lg:col-span-2 text-center lg:text-left">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl">Video <span class="u-accent">Introduction</span></h2>
+                <p class="mt-3 sm:mt-4 text-sm sm:text-base text-silver-700">
+                    Gambaran cepat ekosistem FORTU: perangkat, software, dan layanan—ringkas & berdampak.
+                </p>
+                <div class="mt-4 sm:mt-6 flex items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-silver-700">
                     <div class="flex items-center gap-2"><i data-lucide="play-circle"></i> 90 detik</div>
                     <div class="flex items-center gap-2"><i data-lucide="sparkles"></i> Overview</div>
                 </div>
@@ -165,7 +168,7 @@
             <div class="lg:col-span-3">
                 <div class="relative w-full overflow-hidden rounded-2xl shadow-lg" style="padding-top: 56.25%;">
                     <iframe class="absolute inset-0 w-full h-full"
-                        src="https://www.youtube-nocookie.com/embed/bGsjD8IGE48?rel=0&modestbranding=1&controls=1&playsinline=1&autoplay=1&mute=1"
+                        src="https://www.youtube-nocookie.com/embed/{{ getYoutubeUrl() ?? 'bGsjD8IGE48' }}?rel=0&modestbranding=1&controls=1&playsinline=1&autoplay=1&mute=1"
                         title="FORTU Introduction" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>

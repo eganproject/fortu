@@ -1,8 +1,14 @@
 <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3 group">
-        <div class="h-9 w-9 rounded-xl metal-dark ring-1 ring-white/70 group-hover:shadow-neo transition"></div>
-        <span class="font-display text-xl tracking-tight">FORTU</span>
+        
+          <img 
+          src="{{ get_logo_url() }}" 
+          alt="FORTU Logo" 
+          class="h-9 w-auto object-contain transition group-hover:shadow-neo"
+        >
+        {{-- <div class="h-9 w-9 rounded-xl metal-dark ring-1 ring-white/70 group-hover:shadow-neo transition"></div> --}}
+        {{-- <span class="font-display text-xl tracking-tight">FORTU</span> --}}
       </a>
       <nav class="hidden md:flex items-center gap-2 text-sm " id="">
         <a href="/" class="px-3 py-2 rounded-xl hover:bg-silver-100/70 relative {{ request()->path() === '/' ? 'active' : '' }}"><span>Beranda</span><span class="u absolute left-3 -bottom-0.5"></span></a>
