@@ -1,20 +1,21 @@
 @extends('layouts.user.main')
 @section('title', 'Contact Us - Fortu Digital Teknologi')
-@push('cssOnPage')
-@endpush
+
 @section('content')
     @php
-            $footer = getFooterUser();
-        @endphp
+        $footer2 = getFooterUser2();
+    @endphp
     <section id="kontak" class="py-20 bg-gradient-to-b from-silver-50 to-silver-100/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10">
             <div class="lg:col-span-2 reveal">
                 <h2 class="font-display text-3xl sm:text-4xl"><span class="u-accent">Kontak</span></h2>
                 <p class="mt-3 text-silver-700">Butuh demo atau penawaran? Kirim pesan — kami respons cepat.</p>
                 <div class="mt-6 space-y-3 text-silver-800">
-                    <div class="flex items-center gap-3"><i data-lucide="mail"></i>  {{ $footer['company']?->email }}</div>
-                    <div class="flex items-center gap-3"><i data-lucide="phone"></i>    {{ $footer['company']?->contact_number }}</div>
-                    <div class="flex items-center gap-3"><i data-lucide="map-pin"></i>    {{ $footer['company']?->address_1 }}</div>
+                    <div class="flex items-center gap-3"><i data-lucide="mail"></i> {{ $footer2['company']?->email }}</div>
+                    <div class="flex items-center gap-3"><i data-lucide="phone"></i>
+                        {{ $footer2['company']?->contact_number }}</div>
+                    <div class="flex items-center gap-3"><i data-lucide="map-pin"></i> {{ $footer2['company']?->address_1 }}
+                    </div>
                 </div>
             </div>
             <div class="lg:col-span-3 reveal">
@@ -72,8 +73,10 @@
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-full p-6 shadow-lg flex flex-col items-center">
-            <svg class="animate-spin h-8 w-8 text-silver-900 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <svg class="animate-spin h-8 w-8 text-silver-900 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                </circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
             </svg>
             <span class="text-silver-900 text-sm">Mengirim...</span>
@@ -108,9 +111,10 @@
         });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+
+
         // Year
         document.getElementById('year').textContent = new Date().getFullYear();
-
         // Loading overlay
         const loadingOverlay = document.getElementById('loading-overlay');
 
